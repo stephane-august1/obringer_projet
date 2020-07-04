@@ -94,7 +94,10 @@
       </nav>
       {# end nav bar#}
 
+{#<button onclick="{{asset('topFunction()')}}" id="myBtn" title="Go to top">#}
+ <button onclick='topFunction()' id="myBtn"  title="Go to top" >&#10148;
 
+</button> 
       {% block body %}{% endblock %}
 
       {% block footer %}
@@ -134,7 +137,7 @@
       {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
 
-
+   <script src="./../build/js/scrool-up.js"></script>
 
       {% endblock %}
     </body>

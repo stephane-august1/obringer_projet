@@ -9,203 +9,74 @@
 </style>
 
 <div class="example-wrapper">
-    <h1 class="puce text-center">Les Séances & Prestations</h1>
-<div class="row mt-5">
-   
+    <h1 class="text-center" style="color:#c40a92">Les Séances & Prestations</h1>
     
-       
+  
 
-
+<br> {% for prestation in prestations %}
+<!-- Modal -->
+<div class="modal fade mod{{prestation.id}} " data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="staticBackdropLabel" style="color:#c40a92;">{{prestation.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="{{prestation.srcimage}}" class="img-fluid card-img-top " alt="{{prestation.srcimage}}" style="margin-left:20%;max-height:220px;max-width:260px;">
+        <p class=" card-text" style="color:#c40a92;
+ ;">{{prestation.description}}</p> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Fermer</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+</div>{% endfor %}
+<div class="row mt-5 ">
+   
+   
       
- <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
-   <h3 class="mb-4 puce text-center"><u>Pierres chaudes spécial dos</u></h3> 
-        <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-            <img src="{{asset('./images/massage-pierre.webp')}}" class="img-fluid card-img-top" alt="{{asset('./images/massage-pierre.webp')}}" style="max-height:220px;">
+  
+     {##}{% for prestation in prestations %}
+      <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
+      
+   <h3 class="mb-4 puce text-center" ><u style="color:#c40a92;">{{prestation.title}}</u></h3> 
+        <div class="mt-4 card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
+            <img src="{{prestation.srcimage}}" class="img-fluid card-img-top" alt="{{prestation.srcimage}}" style="max-height:220px;">
                 <div class="card-body">
                    {# <h6>{{ newproducts.id }}</h6>#}
-           <h5 class="text-secondary card-title">Pierres chaudes spécial dos</h5>
+           <h5 class="text-secondary card-title" style="color:purple !important;">{{prestation.title}}</h5>
           
             <p class="text-secondary card-text">prix:<span style="font-style:upercase;color:   #000000;
- ;"><b> 50 €</b></span> Durée : 45 min.</p>
-            <p class=" card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn btn-outline-success mx-auto">
+ ;"><b> {{prestation.price}} €</b></span> Durée : <span style="font-style:upercase;color:   #000000;
+ ;">{{prestation.time}}</span></p>
+                   
+            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn btn-perso mx-auto " aria-pressed="false" data-toggle="modal" data-target=".mod{{prestation.id}}">
             <i class="fas fa-info mr-1"></i>
             infos</a> 
             </div> 
           </div>
         </div>
-       
+     {##}  
 
-
- <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12"> 
- <h3 class="mb-4 purple text-center">Hydrothérapie des mains</h3>
-        <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-            <img src="{{asset('./images/hydrotherapie2.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/hydrotherapie2.jpg')}}" style="max-height:220px;">
-                <div class="card-body">
-                   {# <h6>{{ newproducts.id }}</h6>#}
-           <h5 class="purple card-title">Hydrothérapie des mains</h5>
-          
-            <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 40 €</b></span> Durée : 1 heure</p>
-            
-             <p class="card-text">Arthrose, arthrite, eczéma...</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div>
+{% endfor %}
+      
+ 
   
  
  
 
 
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
-<h3 class=" mb-4 puce text-center">Consultation phytothérapie et Aromathéra</h3>  
-        <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-            <img src="{{asset('./images/fruit.webp')}}" class="img-fluid card-img-top" alt="{{asset('./images/fruit.webp')}}" style="max-height:220px;">
-                <div class="card-body">
-                   {# <h6>{{ newproducts.id }}</h6>#}
-           <h5 class="puce card-title">Consultation phytothérapie et Aromathéra</h5>
-          
-            <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 40 €</b></span> Durée : 1 heure</p>
-            <p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
-
-
-
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12"> 
-<h3 class="mb-4 puce text-center">Naturopathie pour les enfants</h3>
-        <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-            <img src="{{asset('./images/naturopathie_enfant2.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/naturopathie_enfant2.jpg')}}" style="max-height:220px;">
-                <div class="card-body">
-                   {# <h6>{{ newproducts.id }}</h6>#}
-           <h5 class="puce card-title">Naturopathie pour les enfants</h5>
-          
-            <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 30 €</b></span> - 1 heure 30 min.</p>
-            <p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
-
-
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
- <h3 class="mb-4 puce text-center">Consultation de luminothérapie du visage</h3> 
-    <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-        <img src="{{asset('./images/visage.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/visage.jpg')}}" style="max-height:260px;">
-            <div class="card-body">
-<h5 class="puce card-title">Consultation de luminothérapie du visage</h5>         
-    <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 30 €</b></span> - 1 heure</p>
-<p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
-
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
-  <h3 class="mb-4 puce text-center">Séances de méditation chacra</h3> 
-    <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-        <img src="{{asset('./images/chacra2.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/chacra2.jpg')}}" style="max-height:260px;">
-            <div class="card-body">
-<h5 class="puce card-title">Séances de méditation chacra</h5>         
-    <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 40 €</b></span> - 1 heure</p>
-<p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
 
 
 
 
-  
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12"> 
-<h3 class="mb-4 puce text-center">Séance de réflexologie</h3>
-    <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-        <img src="{{asset('./images/reflexo_plantaire.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/reflexo_plantaire.jpg')}}" style="max-height:260px;">
-            <div class="card-body">
-<h5 class="puce card-title">Séance de réflexologie</h5>         
-    <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 40 €</b></span> - 1 heure 30 min ou plus.</p>
-<p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
-
-  
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12"> 
-<h3 class="mb-4 puce text-center">Consultation en auriculothérapie</h3>
-    <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-        <img src="{{asset('./images/auriculotherapie2.jpeg')}}" class="img-fluid card-img-top" alt="{{asset('./images/auriculotherapie2.jpeg')}}" style="max-height:260px;">
-            <div class="card-body">
-<h5 class="puce card-title">Consultation en auriculothérapie</h5>         
-    <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 80 €</b></span> - 1 heure 30 min ou plus.</p>
-<p class="card-text">En 2 séances.. Sevrage tabagique et gestion du poids.</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
-
-
-
- 
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
- <h3 class="mb-4 puce text-center">Consultation de luminothérapie du visage</h3> 
-    <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-        <img src="{{asset('./images/visage.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/visage.jpg')}}" style="max-height:260px;">
-            <div class="card-body">
-<h5 class="puce card-title">Consultation de luminothérapie du visage</h5>         
-    <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 30 €</b></span> - 1 heure</p>
-<p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
-
-
-
-
-
-<div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
-  <h3 class="mb-4 puce text-center">Consultation de naturopathie</h3> 
-    <div class="card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
-        <img src="{{asset('./images/soins.jpg')}}" class="img-fluid card-img-top" alt="{{asset('./images/soins.jpg')}}" style="max-height:260px;">
-            <div class="card-body">
-<h5 class="puce card-title">Consultation de naturopathie</h5>         
-    <p class="puce card-text">prix:<span style="font-style:upercase;color:   #22bde7;
- ;"><b> 60 €</b></span> - 1 heure 30 min. ou plus</p>
-<p class="card-text">description:</p>         
-            <a href="{#{path('cart_add', {'id': newproducts.id})}#}" class="btn  btn-outline-success mx-auto">
-            <i class="fas fa-info mr-1"></i>
-            infos</a> 
-            </div> 
-          </div>
-        </div> 
 
 
 

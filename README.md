@@ -77,6 +77,9 @@ It's symfony website-skeleton project with some additional tools to validate cod
             &nbsp;&nbsp;&nbsp;&nbsp;charset: utf8mb4<br>
             &nbsp;&nbsp;&nbsp;&nbsp;collate: utf8mb4_unicode_ci
 
+##create fixture install orm-fixture
+1. composer require orm-fixtures --dev
+
 
 ## Deployment
 enable database:

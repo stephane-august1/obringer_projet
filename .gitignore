@@ -1,0 +1,44 @@
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+
+###> symfony/framework-bundle ###
+/.vscode
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+#/public/bundles/
+/var/
+/vendor/
+Migrations
+/src/Migrations/
+/zip/
+###< symfony/framework-bundle ###
+
+###> symfony/test ###
+/src/Controller/TestController.php
+/src/Entity/Test.php
+/src/Form/TestType.php
+/src/Service/TestService.php
+/templates/test/*
+###< symfony/test ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###

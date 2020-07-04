@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Obringer Accueil{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 98%; width: 98%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1 class="purple text-center">Mélanie Obringer Naturopathe</h1>
+    <div class="row">
+  <div class="col-lg-12 col-md-10 col-sm-10 col-xs-10 mx-auto">
+ 
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{{asset('./images/flower2.jpg')}}" class="d-block w-100" alt="..." >
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('./images/foot2.jpg')}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('./images/essential_huile.jpg')}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div><hr>
+<div class="row">
+<div class="col-10 offset-2">
+<div class="mt-5 row">
+    <div class="col-6 puce">
+<h2 style="margin-top:22%;">Naturopathe en Moselle à Forbach </h2>
+<h3 class="puce">Mélanie vous propose ses services & séances de naturopathie. </h3></div>
+<div class="col-6 puce">
+   <img src="{{asset('./images/melanie.jpg')}}"  alt="{{asset('./images/melanie.jpg')}}" style="width:42%;">
+</div>
+</div></div>
+<div class="row">
+    <div class="mt-4 col-10 offset-1">
+<h2 class="text-center">La naturopathie</h2>
+<p class="puce">Un concept préventif
+
+
+
+Aujourd’hui  l’O.M.S.  définit  la santé pour l’individu comme un « état complet de bien-être  physique, mental et social », et toujours selon l’OMS, "la naturopathie est un ensemble de méthodes de soins visant à renforcer les défenses de l'organisme par des moyens considérés comme naturels et biologiques''.
+
+La naturopathie va bien au-delà de cette définition, pour faire simple elle défend le  « capital santé »   qui repose sur  l’art de rester en bonne santé, d’être acteur de sa santé et prendre soin de soi par des moyens naturels.
+
+La naturopathie englobe l’individu sur tous les plans de l’être.
+-physique, énergétique, émotionnel, mental,  spirituel, socioculturel et même planétaire (écologie).
+
+On peut donc en conclure que la naturopathie a pour mission de prévenir la maladie, de conserver la santé, ou de l’optimiser par un mode de vie plus sain.</p></div>
+</div>
+<div class="row">
+<div class="col-8 offset-2">
+<h4 class="ml-4 mr-4" style="color:purple;">La naturopathie contribue ainsi à la promotion d’une santé globale et durable, elle s’inscrit en parfaite complémentarité avec les autres pratiques sanitaires et/ou paramédicales.</h4>
+</div></div>
+<hr>
+<div class="row">
+<div class="col-10 offset-1">
+<h2 class="text-center">Services : </h2>
+<div class="mt-5 row">
+    <div class="col-12 puce">
+        <div class="row">
+            <div class=" col-4 text-center"> Massages aux Pierres Chaudes 
+                <div class="mt-3 col-12">
+                    <img src="{{asset('./images/massage-pierre.webp')}}"  alt="{{asset('./images/massage-pierre.jpg')}}" style="width:32%;">
+                </div></div>
+            
+  <div class=" col-4 text-center">Luminothérapie
+      <div class="mt-3 col-12">
+      <img src="{{asset('./images/lumino.jpg')}}"  alt="{{asset('./images/lumino.jpg')}}" style="width:32%;">
+       </div>
+      </div>
+  <div class=" col-4 text-center">Massages Siam
+      <div class="mt-3 col-12">
+      <img src="{{asset('./images/massages_siam.jpg')}}"  alt="{{asset('./images/massages_siam.jpg')}}" style="width:32%;">
+       </div>
+</div></div></div></div>
+
+<div class="mt-5 row">
+    <div class="col-12 puce">
+        <div class="row">
+            <div class=" col-4 text-center"> Auriculothérapie 
+                <div class="mt-3 col-12">
+                    <img src="{{asset('./images/auriculotherapie2.jpeg')}}"  alt="{{asset('./images/auriculotherapie2.jpeg')}}" style="width:32%;">
+                </div></div>
+            
+  <div class=" col-4 text-center">Magnétisme
+      <div class="mt-3 col-12">
+      <img src="{{asset('./images/physiotherapy.webp')}}"  alt="{{asset('./images/physiotherapy.webp')}}" style="width:32%;">
+       </div>
+      </div>
+  <div class=" col-4 text-center">Tabacologie
+      <div class="mt-3 col-12">
+      <img src="{{asset('./images/tabacologie.jpg')}}"  alt="{{asset('./images/tabacologie.jpg')}}" style="width:32%;">
+       </div>
+</div></div></div></div>
+
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}

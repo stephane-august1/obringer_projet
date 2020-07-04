@@ -1,0 +1,38 @@
+/*color*/
+/* 
+background-color: #431737; 
+background-color: #431737;
+background-color: #431737;
+
+*/
+
+body {
+    background-color: #431737;
+    background-color: #b8c687;
+    background-color: #D4EE9F;
+    color: lightblue;
+}
+.purple{
+    color:purple;
+}
+h2{
+    color:#431737;
+    color:#661141;
+}
+h1.puce {
+    color: #431737;
+    color: #661141;
+    font-size:2.3rem;
+}
+.puce{
+    list-style: none !important;
+    color:#661141 !important;
+    font-size:1.2rem;
+}
+/* Slideshow container */
+.carousel.slide {
+    max-width: 99%;
+    max-height: 19%;
+    position: relative;
+    /* margin: auto;*/
+}

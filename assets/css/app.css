@@ -129,6 +129,7 @@ a.btn.btn-perso:after {
     position: fixed;
     bottom: 100px;
     right: 20px;
+    background-color: rgb(79, 231, 104);
     background-color: rgb(29, 255, 67);
 
     color: #555;
@@ -144,4 +145,17 @@ a.btn.btn-perso:after {
     color:
         rgb(29, 255, 67);
     ;
+}
+
+/*carousel*/
+.carousel-control-prev-icon {
+    background-color: rgb(255, 29, 217);
+    width: 13%;
+    height: 15%;
+}
+
+.carousel-control-next-icon {
+    background-color: rgb(255, 29, 217);
+    width: 13%;
+    height: 15%;
 }

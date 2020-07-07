@@ -18,17 +18,19 @@ class MailService
     public function maillingContact($a, $mailer)
     {
         $message = (new \Swift_Message("vous avez un nouveau message"))
-            ->setFrom('testermailaugust1@gmail.com')
-            ->setTo('testermailaugust1@gmail.com')
+            ->setFrom('melanie.obr1ger@gmail.com')
+            ->setTo('melanie.obr1ger@gmail.com')
             ->setBody(
                 "<html>
                     <body>
-                        <h1>vous avez un nouveau message de</h1>
-                            <p>Sujet du message :" . $a['sujet'] . "</p>
-                            <h2>le nom:" . $a['nom'] . "</h2>
-                                <h2>le telephone:" . $a['telephone'] . "</h2>
-                                <p>Voici le message :" . $a['message'] . "</p>
-                               <h3>pour reponce a ce email voici sont adresse email :" . $a['mail'] . "</h3>
+                        <h1>Nouveau message du site internet</h1>
+                            
+                            <h2>Message de : " . $a['nom'] .
+                    "</h2>
+                            <h3>Sujet du message : " . $a['sujet'] . "</h3>
+                                <h3>Numéro téléphone : " . $a['telephone'] . "</h3>
+                                <h3>Voici le message : " . $a['message'] . "</h3>
+                               <p>Pour répondre au email voici son adresse : " . $a['mail'] . "</p>
                             </body>
                           </html>",
                 'text/html'

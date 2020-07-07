@@ -13,7 +13,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request, MailService $mailService,  \Swift_Mailer $mailer)
+    public function index(Request $request, MailService $mailService, \Swift_Mailer $mailer)
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
@@ -39,7 +39,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/send", name="send")
      */
-    public function contact(Request $request,  \Swift_Mailer $mailer)
+    public function contact(Request $request, \Swift_Mailer $mailer)
     {
 
 

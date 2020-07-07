@@ -164,45 +164,45 @@ a.btn.btn-perso:after {
 input::-webkit-input-placeholder {
     color: red !important;
     background-color: #c40a92;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 input:-moz-placeholder {
     /* Firefox 18- */
     color: #c40a92 !important;
     background-color: #c40a92;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 input::-moz-placeholder {
     /* Firefox 19+ */
     color: #c40a92 !important;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 input:-ms-input-placeholder {
     color: #c40a92 !important;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 textarea::-webkit-input-placeholder {
     color: #c40a92 !important;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 textarea:-moz-placeholder {
     /* Firefox 18- */
     color: #c40a92 !important;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 textarea::-moz-placeholder {
     /* Firefox 19+ */
     color: #c40a92 !important;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }
 
 textarea:-ms-input-placeholder {
     color: #c40a92 !important;
-    background-color: rgb(204, 255, 153)
+    background-color: rgb(235, 254, 225)
 }

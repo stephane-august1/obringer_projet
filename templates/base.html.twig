@@ -16,7 +16,7 @@
     <body>
       {# start nav bar#}
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/logo_obringer.png')}}" alt="{{asset('./images/logo_obringer.png')}}" style="width:12%;"> Cabinet de Naturopathie de vitalité et bien-être Mélanie Obringer</a>
+        <p style="font-size:0.7rem;"><a class="navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/logo_obringer.png')}}" alt="{{asset('./images/logo_obringer.png')}}" style="width:12%;"> Cabinet de Naturopathie de vitalité et bien-être Mélanie Obringer</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
           aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -25,17 +25,39 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav mr-auto" style="margin-left:-16%;">
             <li class="nav-item">
-              <a class="nav-link" href="{{ path('home') }}">Accueil </a>
+              <a class="nav-link" href="{{ path('home') }}"> <i class="fas fa-home"></i>Accueil </a>
             </li>
+            {##}
             <li class="nav-item">
-              <a class="nav-link" href="{{ path('prestations') }}">Séances & Tarifs</a>
+            <div class="dropdown">
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info"></i>  Blog / Avis
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{path('blog')}}">
+                <i class="fas fa-comments"></i> blog</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ path('home_avis') }}">
+                  <i class="far fa-edit"></i> Vos Avis</a>
+            
+              <div class="dropdown-divider"></div>
+                <a class=" dropdown-item" href="{#{ path('video') }#}">
+                  <i class="text-center fas fa-video"></i> Video</a>
+              </div>
+            </div>
+          </li>
+            {##}
+           
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('prestations') }}"><i class="text-center fas fa-comments-dollar"></i> Séances & Tarifs</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link"  href="{{ path('cabinet') }}">Le Cabinet</a>
+              <a class="nav-link"  href="{{ path('cabinet') }}"><i class="text-center fas fa-couch"></i> Cabinet</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link"  href="{{ path('contact') }}">Contact</a>
+              <a class="nav-link"  href="{{ path('contact') }}"><i class="text-center fas fa-location-arrow"></i> Contact</a>
             </li>
+            
           
             {% if not app.user %}
             {#<li class="nav-item ">
@@ -43,9 +65,9 @@
             </li>#}
 
             {% else %}
-            <li class="nav-item">
+            {#<li class="nav-item">
               <a class="nav-link" href="{{ path('user_show', {'id': app.user.id}) }}">Mon compte</a>
-            </li>
+            </li>#}
 
             {% endif %}
 
@@ -76,9 +98,27 @@
           {% endif %}
 
           {% if not app.user %}
-          <li class=" navbar-nav nav-item ">
-            <a class=" nav-link " href="{{ path('app_login') }}">Admin</a>
+          {##}
+            <li class="nav-item navbar-nav ">
+            <div class="dropdown">
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-lock"></i>  Connexion / Inscription
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            
+                <a class="dropdown-item" href="{{ path('app_login') }}">
+                  <i class="fab fa-expeditedssl"></i> Connexion</a>
+              <div class="dropdown-divider"></div>
+                <a class=" dropdown-item" href="{{ path('registration') }}">
+                  <i class="text-center fas fa-users"></i> Inscription</a>
+              <div class="dropdown-divider"></div>
+                <a class=" dropdown-item" href="{{ path('app_login') }}">
+                  <i class="fab fa-expeditedssl"></i> Admin</a>
+              </div>
+            </div>
           </li>
+          {##}
+         
           {% else %}
           <li class=" navbar-nav nav-item">
             <a href="{{ path ("app_logout") }}">
@@ -108,7 +148,7 @@
             <ul class="navbar-nav mr-auto" style="margin-left:33%">
 
               <li class="nav-item">
-                <a class="nav-link" href="https://twitter.com/symfony" title="Symfony Twitter">
+                <a class="nav-link" href="#https://twitter.com/" title="Symfony Twitter">
                   <i class="fab fa-twitter" style="color:lightgreen;font-size:2rem;" aria-hidden="true"></i>
                 </a>
               </li>
@@ -136,6 +176,10 @@
       {% endblock %}
       {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
+       <script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js'></script>
+       <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.Melanie.fr/mentions_legales/');});</script>
+       <script src="/../js/cookieschoices.js"></script>
+         </script>
 
    <script src="./../js/scrool-up.js"></script>
 

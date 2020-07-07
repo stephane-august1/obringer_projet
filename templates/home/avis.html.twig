@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Avis!{% endblock %}
+
+{% block body %}
+<div class="row">
+     <div class="col-4">
+   
+</div>
+ <div class="col-4">
+   
+</div>
+{% if app.user == true %}
+   <div class="col-4">
+        <a class="btn btn-secondary" href="{{ path('avis_one_show', {'id': app.user.id}) }}"><i class="fas fa-eye"></i> Voir mes avis</a>
+        {% else %}
+        <div class="col-4">
+        <h6 class="text-danger">pour donner votre avis connectez-vous</h6>
+   {% endif %}
+
+   
+         <a class="btn btn-info" href="{{ path('avis_new') }}">
+             <i class="fas fa-edit"></i>
+             Donner un avis</a>
+    </div>
+</div>
+<h2 class="text-center">Vos Avis</h2>
+
+
+
+
+<div class="container">
+        <div class="mt-2 row text-center perso">
+        {% for avis in avis %}
+        <div class="mb-4 col-5">
+<h4 class="perso">Donné par : {{avis.user.name}}</h4>
+
+        </h1>
+    <table class=" table  avis">
+        <thead>
+          <tr  style="background-color:rgba(155, 57, 168, 0.651);">
+                <th class="text-center" >Notes</th>
+                 <th class="text-center" >date:{{ avis.date|date("m/d/Y") }}</th>
+                
+           </tr>
+            </thead>
+            <tbody>
+<tr>                  
+         {% if avis.qualite == '0' %}
+                <th>Qualité &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.qualite}}/5</span></th>
+                <td><i class="far fa-star"></i>
+                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif avis.qualite == '1' %}
+                <th class="text-center">Qualité &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.qualite}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif  avis.qualite == '2' %}
+                <th>Qualité &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.qualite}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.qualite == '3' %}
+                <th>Qualité &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.qualite}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.qualite == '4' %}
+                <th>Qualité &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.qualite}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i></td>
+                      {% elseif  avis.qualite == '5' %}
+                <th>Qualité &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.qualite}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></td>
+        {% endif %}
+</tr>
+            <tr>                  
+         {% if avis.delais == '0' %}
+                <th>Delais &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.delais}}/5</span></th>
+                <td><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif avis.delais == '1' %}
+                <th> delais &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.delais}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span>
+                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif  avis.delais == '2' %}
+                <th> delais &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.delais}}/5</span></th>
+                 <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.delais == '3' %}
+                <th> delais &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.delais}}/5</span></th>
+               <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.delais == '4' %}
+                <th> delais &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.delais}}/5</span></th>
+                 <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i></td>
+                      {% elseif  avis.delais == '5' %}
+                <th> delais  &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.delais}}/5</span></th>
+               <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></td>
+        {% endif %}
+</tr>
+            <tr>                  
+         {% if avis.expertise == 0 %}
+                <th> expertise  &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.expertise}}/5</span></th>
+                <td><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif avis.expertise == '1' %}
+                <th> expertise  &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.expertise}}/5</span></th>
+               <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span>
+                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif  avis.expertise == '2' %}
+                <th> expertise  &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.expertise}}/5</span></th>
+                 <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.expertise == '3' %}
+                <th> expertise  &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.expertise}}/5</span></th>
+                 <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.expertise == '4' %}
+                <th> expertise  &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.expertise}}/5</span></th>
+                 <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i></td>
+                      {% elseif  avis.expertise == '5' %}
+                <th> expertise &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.expertise}}/5</span></th>
+               <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></td>
+        {% endif %}
+</tr>
+        <tr>                  
+         {% if avis.prix == '0' %}
+                <th> prix &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.prix}}/5</span></th>
+                 <td><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif avis.prix == '1' %}
+                <th> prix &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.prix}}/5</span></th>
+                <td><span class="fa fa-star checked"></span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                </td>
+                    {% elseif  avis.prix == '2' %}
+                <th> prix &nbsp;&nbsp;  <span style="color:rgb(255, 0, 221);">{{avis.prix}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.prix == '3' %}
+                <th> prix &nbsp;&nbsp; <span style="color:rgb(255, 0, 221);">{{avis.prix}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i><i class="far fa-star"></i></td>
+                    {% elseif  avis.prix == '4' %}
+                <th> prix &nbsp;&nbsp; <span style="color:rgb(255, 0, 221);">{{avis.prix}}/5</span></th>
+                <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></i><i class="far fa-star"></i></td>
+                      {% elseif  avis.prix == '5' %}
+                <th> prix &nbsp;&nbsp; <span style="color:rgb(255, 0, 221);">{{avis.prix}}/5</span></th>
+               <td><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span><span class="fa fa-star checked fa-1x" data-fa-transform="shrink-7 down-1.8 up-1.8 right-2.25 left-2.25" style="background:#D4EE9F" data-fa-mask="fa fa-star"></span></td>
+        {% endif %}
+</tr>          
+        <tr>
+                <th>details</th>
+                <td>{{ avis.details }}</td>
+        </tr> 
+        
+         <tr>
+             <th>produitconcerne</th>
+             <td>{{ avis.produitconcerne }}</td>
+        </tr>  
+        </tbody>
+    </table>
+      </div> <div class="col-1"></div><br>
+      <br>
+      <br>
+      <br>
+ {% endfor %}</div><br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+{% endblock %}

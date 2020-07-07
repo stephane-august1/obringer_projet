@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis index{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Avis index(writer)</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Qualite</th>
+                <th>Delais</th>
+                <th>Expertise</th>
+                <th>Prix</th>
+                <th>Details</th>
+                <th>Date</th>
+                <th>Produitconcerne</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for avi in avis %}
+            <tr>
+                <td>{{ avi.id }}</td>
+                <td>{{ avi.qualite }}</td>
+                <td>{{ avi.delais }}</td>
+                <td>{{ avi.expertise }}</td>
+                <td>{{ avi.prix }}</td>
+                <td>{{ avi.details }}</td>
+                <td>{{ avi.date ? avi.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ avi.produitconcerne }}</td>
+                <td>
+                    <a href="{{ path('avis_show', {'id': avi.id}) }}">voir</a>
+                    <a href="{{ path('avis_edit', {'id': avi.id}) }}">editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">pas d'enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>  <a href="{{ path('writer') }}"> <i class="far fa-arrow-alt-circle-left"></i>
+      retour aux table </a>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="{{ path('avis_new') }}">Créer un nouveau</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

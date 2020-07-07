@@ -206,3 +206,39 @@ textarea:-ms-input-placeholder {
     color: #c40a92 !important;
     background-color: rgb(235, 254, 225)
 }
+
+.fa-star.normal {
+
+    color: rgb(255, 196, 0);
+}
+
+.fa-star.checked {
+
+    color: rgb(255, 196, 0);
+    color: rgb(255, 0, 221);
+
+}
+
+.perso {
+    color: rgb(255, 0, 221) !important;
+}
+
+.avis {
+    border: 1px solid rgba(201, 24, 177, 0.801) !important;
+
+
+    border-bottom: 1px solid rgba(201, 24, 177, 0.801) !important;
+}
+
+table thead tr .top-br th {
+    background-color: rgba(155, 57, 168, 0.651) !important;
+    border-top: 1px solid rgb(255, 0, 221) !important;
+    border-bottom: 1px solid rgb(255, 0, 221) !important;
+}
+
+.my-border-icon {
+    text-shadow: -1px 0 #000,
+        0 1px #000,
+        1px 0 #000,
+        0 -1px #000;
+}

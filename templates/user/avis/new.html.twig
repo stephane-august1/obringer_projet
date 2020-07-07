@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Avis{% endblock %}
+
+{% block body %}
+    <h1>Créer un Avis</h1>
+
+    {{ include('avis/_form.html.twig') }}
+
+    <a href="{{ path('avis_index') }}"> <i class="far fa-arrow-alt-circle-left"></i>
+      retour à la liste</a>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis index{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Avis index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center" style="max-width:35px !important;">N° :</th>
+                <th class="text-center" style="max-width:75px !important;">Auteur</th>
+                <th class="text-center"style="max-width:70px !important;">Qual.</th>
+                <th class="text-center"style="max-width:55px !important;">Del.</th>
+                <th class="text-center"style="max-width:55px !important;">Exp.</th>
+                <th class="text-center"style="max-width:55px !important;">Prix</th>
+                <th class="text-center">Details</th>
+                <th class="text-center">Date</th>
+                <th class="text-center">Produitconcerne</th>
+                <th class="text-center">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for avi in avis %}
+            <tr>
+                <td class="text-center">{{ avi.id }}</td>
+                <td class="text-center">{{ avi.user.name }}</td>
+                <td class="text-center" style="max-width:70px !important;" >{{ avi.qualite }}</td>
+                <td class="text-center">{{ avi.delais }}</td>
+                <td class="text-center">{{ avi.expertise }}</td>
+                <td class="text-center">{{ avi.prix }}</td>
+                <td>{{ avi.details }}</td>
+                <td>{{ avi.date ? avi.date|date('d-m-Y') : '' }}</td>
+                <td>{{ avi.produitconcerne }}</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary" href="{{ path('avis_show', {'id': avi.id}) }}"><i class="far fa-eye"></i> voir</a>
+                    <a class="btn btn-sm btn-info"href="{{ path('avis_edit', {'id': avi.id}) }}"><i class="far fa-edit"></i> editer</a>
+                   
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucun enregistrements</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ <a class="ml-5 btn btn-info" href="{{ path('admin') }}"> <i class="far fa-arrow-alt-circle-left"></i>
+      retour aux table </a>
+    <a class="btn btn-outline-primary" style="margin-left:60%;"href="{{ path('avis_new') }}">Créer un nouveau</a><br><br><br><br><br><br><br><br><br>
+{% endblock %}

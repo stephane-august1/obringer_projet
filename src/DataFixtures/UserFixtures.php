@@ -2,9 +2,12 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
+
+
+use App\Entity\Avis;
+use App\Entity\Blog;
 use App\Entity\User;
-
-
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -49,8 +52,35 @@ class UserFixtures extends Fixture
             'user'
         ));
 
-
         $manager->persist($user2);
+        for ($k = 1; $k <= mt_rand(1, 3); $k++) {
+            $avis = new Avis();
+            $avis->setQualite(rand(0, 5));
+            $avis->setDelais(rand(0, 5));
+            $avis->setExpertise(rand(0, 5));
+            $avis->setPrix(rand(0, 5));
+            $avis->setDetails('détail de l\'experience numéro :' . $k);
+            $avis->setDate(new dateTime(rand('-6', '-1')));
+            $avis->setProduitconcerne('le produit est bien');
+            /****a quel user apartient l'avis  ****/
+            $avis->setUser($user2);
+            $manager->persist($avis);
+        }
+        for ($j = 0; $j <= mt_rand(3, 5); $j++) {
+            $blog = new Blog();
+            $blog
+                ->setTitle('titre ' . $j . 'blogue')
+                ->setImagesrc('./images/uneimage.jpg')
+                ->setTexte(' <p>Lorem ipsum dolor sit amet <br>
+                 consectetur adipisicing elit. Tempora nostrum 
+                facilis repudiandae<p>')
+                ->setCreatedAt(new dateTime(rand('-6', '-1')))
+                ->setUser($user2);
+
+            $manager->persist($blog);
+        }
+
+
 
         $manager->flush();
     }

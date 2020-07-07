@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un avis{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Créer un Avis</h1>
+
+    {{ include('avis/_form.html.twig') }}
+
+    <a class="btn btn-sm btn-outline-info" style="margin-left:30%;" href="{{ path('home_avis') }}"> <i class="far fa-arrow-alt-circle-left"></i>
+      retour à la liste</a><br><br>
+{% endblock %}

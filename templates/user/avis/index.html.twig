@@ -3,7 +3,7 @@
 {% block title %}Avis index{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Avis index(writer)</h1>
+    <h1 class="text-center">Avis index</h1>
 
     <table class="table">
         <thead>
@@ -41,9 +41,9 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>  <a href="{{ path('writer') }}"> <i class="far fa-arrow-alt-circle-left"></i>
+    </table>  <a href="{{ path('admin') }}"> <i class="far fa-arrow-alt-circle-left"></i>
       retour aux table </a>
 <br><br><br><br><br><br><br><br><br><br><br><br>
-    <a href="{{ path('avis_new') }}">Créer un nouveau</a>
+    <a href="{{ path('avis_new', {'id': avis.0.user.id}) }}">Créer un nouveau</a>
     <br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}

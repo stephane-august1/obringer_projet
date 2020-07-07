@@ -40,26 +40,28 @@ class HomeController extends AbstractController
         ]);
     }
     /**
+     *  
      * @Route("/les_avis", name="home_avis")
      */
     public function avis(AvisRepository $avisRepository)
     {
-
+        // $totalArticle = $cartService->getTotalArticle();
         // recupere uniquement le user en cours de connexion
-        //  $user = $this->getUser();
+        // $user = $this->getUser();
         // si user est connecter sinon redirection vers login
-        //   if ($user == true) {
+        // if ($user == true) {
 
 
         $avis = $avisRepository->findAll();
         //dd($avis);
         // } else {
-        //  return $this->redirectToRoute('erreur_avis');
+        //     return $this->redirectToRoute('erreur_avis');
         // }
         return $this->render('home/avis.html.twig', [
 
             'avis' => $avis,
             //'carouselactive' => $carouselactive,
+            //'totalarticle' => $totalArticle,
         ]);
     }
 }

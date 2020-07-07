@@ -8,25 +8,29 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Created_at</th>
-                <th>Imagesrc</th>
-                <th>Texte</th>
-                <th>actions</th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Titre</th>
+                <th class="text-center">Crée le</th>
+               
+                <th class="text-center">image</th>
+                <th class="text-center">Article</th>
+                <th></th>
+                <th class="text-center">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for blog in blogs %}
             <tr>
-                <td>{{ blog.id }}</td>
-                <td>{{ blog.title }}</td>
-                <td>{{ blog.createdAt ? blog.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ blog.imagesrc }}</td>
-                <td>{{ blog.texte }}</td>
+                <td class="text-center">{{ blog.id }}</td>
+                <td class="text-center">{{ blog.title }}</td>
+                <td class="text-center">{{ blog.createdAt ? blog.createdAt|date('Y-m-d') : '' }}</td>
+                
+                <td class="text-center"><img class="img-fluid" src="/../images/{{blog.imagesrc}}" alt="/../images/{{blog.imagesrc}}" style="max-width:62%;"></td>
+                <td class="colspan-2">{{ blog.texte }}</td>
+                <td></td>
                 <td>
-                    <a href="{{ path('blog_show', {'id': blog.id}) }}">show</a>
-                    <a href="{{ path('blog_edit', {'id': blog.id}) }}">edit</a>
+                    <a class="btn btn-secondary mb-1" style="min-width:92px;" href="{{ path('blog_show', {'id': blog.id}) }}"><i class="far fa-eye"></i> voir</a>
+                    <a class="btn btn-primary" href="{{ path('blog_edit', {'id': blog.id}) }}"><i class="far fa-edit"></i> éditer</a>
                 </td>
             </tr>
         {% else %}

@@ -1,0 +1,35 @@
+{{ form_start(form) }}
+<div class="row"> 
+<div class="col-10">
+    <h2 class="text-center">Notez nous !!<span style="small">  de 0 à 5 étoiles</span></h2>
+    </div>
+</div>
+<div class="row">
+        <div class=" col-lg-8 col-md-11 col-sm-11 col-xs-11 ">
+      <div class="row">
+      <div class="col-5 offset-1">
+       
+            {{ form_row(form.delais,{'attr':{'placeholder':' note delai'}}) }}
+            {{ form_row(form.qualite,{'attr':{'placeholder':' note qualite'}}) }}
+       </div>
+       <div class="col-5 offset-1">
+            {{ form_row(form.expertise,{'attr':{'placeholder':' note expertise'}}) }}
+            {{ form_row(form.prix,{'attr':{'placeholder':' note prix'}}) }}
+        </div>
+         </div>
+       
+</div></div>
+<div class="row">
+    <div class="col-10 offset-1">
+     {{ form_row(form.produitconcerne,{'attr':{'placeholder':'Le produit concerné'}}) }}   
+     {{ form_row(form.details,{'attr':{'placeholder':' Détails de votre avis'}}) }} 
+  </div>
+  <div class="col-10 mx-auto mb-2">
+    <button class="btn btn-sm btn-outline-success " style="margin-left:0%;">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+     </div>
+</div>
+ 
+          
+   
+{{ form_end(form) }}

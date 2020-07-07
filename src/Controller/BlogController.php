@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
+use Datetime;
 use App\Entity\Blog;
 use App\Form\BlogType;
 use App\Repository\BlogRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/blog")
@@ -20,16 +22,19 @@ class BlogController extends AbstractController
      */
     public function blog(BlogRepository $blogRepository): Response
     {
+        $user = $this->getUser();
+        $userid = $user->getId($user);
         $blogs = $blogRepository->findAll();
-        dd($blogs);
+        //dd($blogs);
         return $this->render('blog/blog.html.twig', [
             'blogs' => $blogs,
+            'userid' => $userid,
         ]);
     }
 
     /**
      *
-     * @Route("/admin/", name="blog_index", methods={"GET"})
+     * @Route("/admin/blog", name="blog_index", methods={"GET"})
      */
     public function index(BlogRepository $blogRepository): Response
     {
@@ -43,16 +48,25 @@ class BlogController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $blog = new Blog();
-        $form = $this->createForm(BlogType::class, $blog);
-        $form->handleRequest($request);
+        $user = $this->getUser();
+        if ($user == true) {
+            $blog = new Blog();
+            $form = $this->createForm(BlogType::class, $blog);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($blog);
-            $entityManager->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            return $this->redirectToRoute('blog_index');
+                $blog->setCreatedAt(new Datetime('now'))
+                    ->setUser($user);
+                // dd($blog);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($blog);
+                $entityManager->flush();
+
+                return $this->redirectToRoute('blog');
+            }
+        } else {
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('blog/new.html.twig', [
@@ -70,6 +84,32 @@ class BlogController extends AbstractController
             'blog' => $blog,
         ]);
     }
+    /**
+     * @Route("/user_blog/{id}", name="user_oneblog_show", methods={"GET"})
+     */
+    public function oneblogshow(UserRepository $userRepository, BlogRepository $blogRepository, $id): Response
+    {
+
+        // recupere uniquement le user en cours de connexion
+        $user = $this->getUser();
+        $userid = $user->getId($user);
+        // dd($userid);
+        // si user est connecter sinon redirection vers login
+
+        $blog = $blogRepository->findBy(
+            [
+                'user' => $userid
+            ]
+        );
+        // dd($userid);
+
+        return $this->render('blog/oneshow.html.twig', [
+            'blog' => $blog,
+            'user' => $userid,
+
+        ]);
+    }
+
 
     /**
      * @Route("/{id}/edit", name="blog_edit", methods={"GET","POST"})
@@ -80,12 +120,48 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $blog->getCreatedAt($blog->getCreatedAt());
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('blog_index');
+
+            return $this->redirectToRoute('blog');
         }
 
         return $this->render('blog/edit.html.twig', [
+            'blog' => $blog,
+            'form' => $form->createView(),
+        ]);
+    }
+    /**
+     * @Route("/{id}/modifier", name="blog_modifier", methods={"GET","POST"})
+     */
+    public function modifier(Request $request, Blog $blog): Response
+    {
+
+        $user = $this->getUser();
+
+        //dd($blogid);
+        $form = $this->createForm(BlogType::class, $blog);
+        $form->handleRequest($request);
+        if ($user == true) {
+            $userid = $user->getId();
+            // dd($userid);
+            $blogid = $blog->getId();
+            if ($userid === $blogid) {
+
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $blog->getCreatedAt($blog->getCreatedAt());
+                    $this->getDoctrine()->getManager()->flush();
+
+
+                    return $this->redirectToRoute('blog');
+                }
+            }
+            echo 'pas votre article';
+        } else {
+            return $this->redirectToRoute('app_login');
+        }
+        return $this->render('blog/useredit.html.twig', [
             'blog' => $blog,
             'form' => $form->createView(),
         ]);
@@ -102,6 +178,6 @@ class BlogController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('blog_index');
+        return $this->redirectToRoute('blog');
     }
 }

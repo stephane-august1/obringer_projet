@@ -70,7 +70,7 @@ class UserFixtures extends Fixture
             $blog = new Blog();
             $blog
                 ->setTitle('titre ' . $j . 'blogue')
-                ->setImagesrc('./images/uneimage.jpg')
+                ->setImagesrc('essential-oils.png')
                 ->setTexte(' <p>Lorem ipsum dolor sit amet <br>
                  consectetur adipisicing elit. Tempora nostrum 
                 facilis repudiandae<p>')

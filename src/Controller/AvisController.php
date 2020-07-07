@@ -8,7 +8,7 @@ use App\Form\AvisType;
 use App\Entity\User;
 use App\Repository\AvisRepository;
 use App\Repository\UserRepository;
-use App\Service\Cart\CartService;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,33 +23,30 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AvisController extends AbstractController
 {
+
     /**
-     *
-     *@IsGranted({"ROLE_ADMIN", "ROLE_USER"})
-     * @Route("/", name="avis_index", methods={"GET"})
+     *@IsGranted("ROLE_USER")
+     * 
+     * @Route("/avis", name="avis_index", methods={"GET"})
      */
     public function index(AvisRepository $avisRepository): Response
     {
 
-        return $this->render('admin/avis/index.html.twig', [
+        return $this->render('avis/index.html.twig', [
             'avis' => $avisRepository->findAll(),
 
         ]);
     }
 
     /**
-     * @Route("/new/{id}", name="avis_new", methods={"GET","POST"})
+     * @Route("/new", name="avis_new", methods={"GET","POST"})
      */
-    public function new(Request $request, User $user, UserRepository $userRepository, $id): Response
+    public function new(Request $request, UserRepository $userRepository): Response
     {
-        $user = $userRepository->find($id);
-
         // recupere uniquement le user en cours de connexion
-        // $user = $user->getUser();
-        // dd($user);
+        $user = $this->getUser();
         // si user est connecter sinon redirection vers login
         if ($user == true) {
-            $user = $this->getUser();
             // dd($user);
             $avi = new Avis();
 
@@ -58,17 +55,17 @@ class AvisController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
-                $avi->setUser($user->getUser());
+                $avi->setUser($user);
                 $avi->setDate(new dateTime('now'));
                 $entityManager->persist($avi);
                 $entityManager->flush();
 
-                return $this->redirectToRoute('avis_home');
+                return $this->redirectToRoute('home_avis');
             }
         } else {
             return $this->redirectToRoute('login');
         }
-        return $this->render('user/avis/new.html.twig', [
+        return $this->render('avis/new.html.twig', [
             'avi' => $avi,
             'form' => $form->createView(),
 
@@ -81,7 +78,7 @@ class AvisController extends AbstractController
     public function show(Avis $avi): Response
     {
 
-        return $this->render('admin/avis/show.html.twig', [
+        return $this->render('avis/show.html.twig', [
             'avi' => $avi,
 
         ]);
@@ -106,13 +103,13 @@ class AvisController extends AbstractController
             ]
         );
         if ($userid != $id) {
+
             return $this->redirectToRoute('error404');
-        } else {
-            return $this->render('admin/avis/oneshow.html.twig', [
+        } else
+            return $this->render('avis/oneshow.html.twig', [
                 'avis' => $avis,
 
             ]);
-        }
     }
 
     /**
@@ -130,7 +127,7 @@ class AvisController extends AbstractController
             return $this->redirectToRoute('home_avis');
         }
 
-        return $this->render('admin/avis/edit.html.twig', [
+        return $this->render('avis/edit.html.twig', [
             'avi' => $avi,
             'form' => $form->createView(),
 

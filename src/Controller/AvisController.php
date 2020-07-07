@@ -38,14 +38,15 @@ class AvisController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="avis_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="avis_new", methods={"GET","POST"})
      */
-    public function new(Request $request, User $user, UserRepository $userRepository): Response
+    public function new(Request $request, User $user, UserRepository $userRepository, $id): Response
     {
-
+        $user = $userRepository->find($id);
 
         // recupere uniquement le user en cours de connexion
-        $user = $this->getUser();
+        // $user = $user->getUser();
+        // dd($user);
         // si user est connecter sinon redirection vers login
         if ($user == true) {
             $user = $this->getUser();
@@ -62,12 +63,12 @@ class AvisController extends AbstractController
                 $entityManager->persist($avi);
                 $entityManager->flush();
 
-                return $this->redirectToRoute('home_avis');
+                return $this->redirectToRoute('avis_home');
             }
         } else {
             return $this->redirectToRoute('login');
         }
-        return $this->render('admin/avis/new.html.twig', [
+        return $this->render('user/avis/new.html.twig', [
             'avi' => $avi,
             'form' => $form->createView(),
 

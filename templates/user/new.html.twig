@@ -8,6 +8,6 @@
 
     {{ include('user/_form.html.twig') }}
 
-    <a href=""{{ path('user_show', {'id': app.user.id}) }}"">back to list</a>
+    <a href="{{ path('user_show', {'id': app.user.id}) }}">back to list</a>
 </div>
 {% endblock %}

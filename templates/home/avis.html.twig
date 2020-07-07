@@ -19,7 +19,7 @@
    {% endif %}
 
    
-         <a class="btn btn-info" href="{{ path('avis_new') }}">
+         <a class="btn btn-info" href="{{ path('avis_new', {'id': avis.0.user.id}) }}">
              <i class="fas fa-edit"></i>
              Donner un avis</a>
     </div>

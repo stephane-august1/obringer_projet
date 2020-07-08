@@ -40,7 +40,7 @@ class HomeController extends AbstractController
         ]);
     }
     /**
-     *  
+     *
      * @Route("/les_avis", name="home_avis")
      */
     public function avis(AvisRepository $avisRepository)
@@ -62,6 +62,18 @@ class HomeController extends AbstractController
             'avis' => $avis,
             //'carouselactive' => $carouselactive,
             //'totalarticle' => $totalArticle,
+        ]);
+    }
+    /**
+     * @Route("/video", name="video")
+     */
+    public function video()
+    {
+
+        return $this->render('home/video.html.twig', [
+            'controller_name' => 'HomeController',
+            //'carousel' => $carousel,
+
         ]);
     }
 }

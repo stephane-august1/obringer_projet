@@ -4,11 +4,12 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationType;
-use Symfony\Component\HttpFoundation\Request;
-//use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
+//use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -30,12 +31,13 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
-            
-            'last_username' => $lastUsername, 'error' => $error]);
+
+            'last_username' => $lastUsername, 'error' => $error
+        ]);
     }
     /**
-        * @Route("/registration", name="registration")
-        */
+     * @Route("/registration", name="registration")
+     */
     public function register(
         Request $request,
         EntityManagerInterface $manager,
@@ -54,7 +56,7 @@ class SecurityController extends AbstractController
         }
         return $this->render('security/registration.html.twig', [
             'form' => $form->createView(),
-           
+
         ]);
     }
     /**

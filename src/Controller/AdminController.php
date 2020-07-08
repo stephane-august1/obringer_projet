@@ -212,13 +212,13 @@ class AdminController extends AbstractController
             ]
         );
         if ($userid != $id) {
-
             return $this->redirectToRoute('error404');
-        } else
+        } else {
             return $this->render('avis/oneshow.html.twig', [
                 'avis' => $avis,
 
             ]);
+        }
     }
 
     /**

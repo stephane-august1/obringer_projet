@@ -31,7 +31,7 @@
             <li class="nav-item">
             <div class="dropdown">
               <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-info"></i>  Blog / Avis
+                <i class="fab fa-rocketchat"></i>  Blog / Avis
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="{{path('blog')}}">
@@ -41,7 +41,7 @@
                   <i class="far fa-edit"></i> Les Avis</a>
             
               <div class="dropdown-divider"></div>
-                <a class=" dropdown-item" href="{#{ path('video') }#}">
+                <a class=" dropdown-item" href="{{ path('video') }}">
                   <i class="text-center fas fa-video"></i> Video</a>
               </div>
             </div>
@@ -122,8 +122,8 @@
           {% else %}
           <li class=" navbar-nav nav-item">
             <a href="{{ path ("app_logout") }}">
-              <button class="btn btn-perso btn-outline-success ml-3 my-sm-0" type="button"
-                placeholder="deconnexion">déconnexion
+              <button class="btn  btn-perso ml-3 my-sm-0" type="button"
+                placeholder="deconnexion"><i class="fas fa-share-square"></i> déconnexion
               </button>
             </a>
           </li>
@@ -155,7 +155,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="https://www.facebook.com/Naturopathemelanieobringer/">
 
-                  <i class="fab fa-facebook-f" style="color:lightblue;font-size:2rem;" aria-hidden="true"></i>
+                 
+                  <i class="fab fa-facebook" style="font-size:2rem;"></i>
                 </a>
               </li>
               <li class="nav-item">
@@ -164,11 +165,11 @@
                 </a>
               </li>
               <li class="nav-item ">
-                <p class="nav-link">&copy; {{ 'now'|date('d-m-Y') }} - The Symfony Project</p>
-                <p class="nav-link">{{ 'mit_license'|trans }}</p>
+                <p class="nav-link">&copy; 01-07-2020 - Obringer Project</p>
+                <p class="nav-link"><br><br></p>
               </li>
             </ul>
-            <p style="color:white;">rgpd link</p>
+            <p ><a href="{#{path('rgpd')}#}" style="color:white;">rgpd</a></p>
           </div>
         </nav>
       </footer>

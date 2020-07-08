@@ -38,9 +38,17 @@ class UserFixtures extends Fixture
             $user,
             'admin'
         ));
+        $user1 = new User();
+        $user1->setName('Mélanie');
+        $user1->setEmail('melanie.obr1ger@gmail.com');
+        $user1->setRoles(array('ROLE_ADMIN'));
+        $user1->setPassword($this->passwordEncoder->encodePassword(
+            $user1,
+            'obr1melanie'
+        ));
 
         $manager->persist($user);
-
+        $manager->persist($user1);
 
         //user simple
         $user2 = new User();
@@ -65,19 +73,20 @@ class UserFixtures extends Fixture
             /****a quel user apartient l'avis  ****/
             $avis->setUser($user2);
             $manager->persist($avis);
-        }
-        for ($j = 0; $j <= mt_rand(3, 5); $j++) {
-            $blog = new Blog();
-            $blog
-                ->setTitle('titre ' . $j . 'blogue')
-                ->setImagesrc('essential-oils.png')
-                ->setTexte(' <p>Lorem ipsum dolor sit amet <br>
+
+            for ($j = 1; $j <= mt_rand(3, 4); $j++) {
+                $blog = new Blog();
+                $blog
+                    ->setTitle('titre ' . $j . 'blogue')
+                    ->setImagesrc('essential-oils.png')
+                    ->setTexte(' <p>Lorem ipsum dolor sit amet <br>
                  consectetur adipisicing elit. Tempora nostrum 
                 facilis repudiandae<p>')
-                ->setCreatedAt(new dateTime(rand('-6', '-1')))
-                ->setUser($user2);
+                    ->setCreatedAt(new dateTime(rand('-6', '-1')))
+                    ->setUser($user2);
 
-            $manager->persist($blog);
+                $manager->persist($blog);
+            }
         }
 
 

@@ -25,14 +25,15 @@ class CabinetFixtures extends Fixture
     ) {
 
         //Cabinet
+        for ($i = 1; $i < 5; $i++) {
+            $cabinet = 'cabinet' . $i;
+            $cabinet = new Cabinet();
+            $cabinet->setName('cabinet' . $i);
+            $cabinet->setDescription('description du cabinet ' . $i);
+            $cabinet->setImagesrc('./images/cabinet' . $i . '.jpg');
 
-        $cabinet = new Cabinet();
-        $cabinet->setName('cabinet1');
-        $cabinet->setDescription('desc cabinet1');
-        $cabinet->setImagesrc('./images/cabinet1.jpg');
-
-        $manager->persist($cabinet);
-
+            $manager->persist($cabinet);
+        }
         $manager->flush();
     }
 }

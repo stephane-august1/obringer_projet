@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Datetime;
+use DateTime;
 use App\Entity\Blog;
 use App\Form\BlogType;
 use App\Repository\BlogRepository;
@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * @Route("/blog")
@@ -20,19 +21,23 @@ class BlogController extends AbstractController
     /**
      * @Route("/", name="blog", methods={"GET"})
      */
-    public function blog(BlogRepository $blogRepository): Response
+    public function blog(BlogRepository $blogRepository, SessionInterface $session): Response
     {
         $user = $this->getUser();
+        $session->set('user', $user);
+
         if ($user == true) {
             $userid = $user->getId($user);
+            $userblog = $blogRepository->find($userid);
         } else {
             $userid = 'noid';
         }
         $blogs = $blogRepository->findAll();
-        //dd($blogs);
+        // dd($userid);
         return $this->render('blog/blog.html.twig', [
             'blogs' => $blogs,
             'userid' => $userid,
+            //'name' => $username,
         ]);
     }
 
@@ -59,9 +64,25 @@ class BlogController extends AbstractController
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
+                $user = $this->getUser();
+                $name = $user->getName();
+                //dd($user);
+                if ($user == true) {
+                    $userid = $user->getId($user);
+                    // $blog->setUser($user);
+                } else {
+                    $userid = 'noid';
+                }
 
-                $blog->setCreatedAt(new Datetime('now'))
-                    ->setUser($user);
+                $blog->setCreatedAt(new dateTime('now'));
+                if ($user == true) {
+                    //  $userid = $user->getId($user);
+                    $blog->setUser($user);
+                    // dd($blog);
+                } else {
+                    $userid = 'noid';
+                }
+
                 // dd($blog);
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($blog);
@@ -129,7 +150,7 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $blog->getCreatedAt($blog->getCreatedAt());
+            $blog->getCreatedAt();
             $this->getDoctrine()->getManager()->flush();
 
 
@@ -148,6 +169,7 @@ class BlogController extends AbstractController
     {
 
         $user = $this->getUser();
+        dd($user);
 
         //dd($blogid);
         $form = $this->createForm(BlogType::class, $blog);
@@ -157,9 +179,8 @@ class BlogController extends AbstractController
             // dd($userid);
             $blogid = $blog->getId();
             if ($userid === $blogid) {
-
                 if ($form->isSubmitted() && $form->isValid()) {
-                    $blog->getCreatedAt($blog->getCreatedAt());
+                    $blog->getCreatedAt();
                     $this->getDoctrine()->getManager()->flush();
 
 

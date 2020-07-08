@@ -4,16 +4,17 @@ namespace App\Controller;
 
 use DateTime;
 use App\Entity\Avis;
-use App\Form\AvisType;
 use App\Entity\User;
+use App\Form\AvisType;
 use App\Repository\AvisRepository;
 use App\Repository\UserRepository;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/avis")
@@ -26,7 +27,7 @@ class AvisController extends AbstractController
 
     /**
      *@IsGranted("ROLE_USER")
-     * 
+     *
      * @Route("/avis", name="avis_index", methods={"GET"})
      */
     public function index(AvisRepository $avisRepository): Response
@@ -41,7 +42,7 @@ class AvisController extends AbstractController
     /**
      * @Route("/new", name="avis_new", methods={"GET","POST"})
      */
-    public function new(Request $request, UserRepository $userRepository): Response
+    public function new(Request $request, UserRepository $userRepository, SessionInterface $session): Response
     {
         // recupere uniquement le user en cours de connexion
         $user = $this->getUser();
@@ -55,6 +56,7 @@ class AvisController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
+                $user = $session->getUser();
                 $avi->setUser($user);
                 $avi->setDate(new dateTime('now'));
                 $entityManager->persist($avi);
@@ -103,13 +105,13 @@ class AvisController extends AbstractController
             ]
         );
         if ($userid != $id) {
-
             return $this->redirectToRoute('error404');
-        } else
+        } else {
             return $this->render('avis/oneshow.html.twig', [
                 'avis' => $avis,
 
             ]);
+        }
     }
 
     /**

@@ -10,6 +10,8 @@ require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 require('../css/bootstrap.4.2.3.css');
 require('../css/bootswatch_cerulean.css');
+//other color//
+//require('../css/bootswatch_cerulean2.css');
 
 require('../css/app.css');
 

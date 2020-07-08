@@ -7,8 +7,9 @@ background-color: #431737;
 */
 
 body {
-    background-color: #c40a92;
-    background-color: #431737;
+    /*background-color: #c40a92;
+    background-color: linear-gradient(#7a729e, #6a63c6 60%, #b49fee);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#63598d), color-stop(60%, #666480), to(#c4bdd4));*/
     background-color: #b8c687;
     background-color: #D4EE9F;
     color: lightblue;

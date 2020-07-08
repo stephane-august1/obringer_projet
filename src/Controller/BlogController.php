@@ -23,7 +23,11 @@ class BlogController extends AbstractController
     public function blog(BlogRepository $blogRepository): Response
     {
         $user = $this->getUser();
-        $userid = $user->getId($user);
+        if ($user == true) {
+            $userid = $user->getId($user);
+        } else {
+            $userid = 'noid';
+        }
         $blogs = $blogRepository->findAll();
         //dd($blogs);
         return $this->render('blog/blog.html.twig', [
@@ -92,7 +96,12 @@ class BlogController extends AbstractController
 
         // recupere uniquement le user en cours de connexion
         $user = $this->getUser();
-        $userid = $user->getId($user);
+        if ($user == true) {
+            $userid = $user->getId($user);
+        } else {
+            return $this->redirectToRoute('app_login');
+        }
+        // $userid = $user->getId($user);
         // dd($userid);
         // si user est connecter sinon redirection vers login
 

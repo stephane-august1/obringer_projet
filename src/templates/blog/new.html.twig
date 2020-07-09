@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Blog{% endblock %}
+
+{% block body %}
+<div class="row">
+<div class="col-1"></div>
+<div class="col-10"><h1>Ecrire une new</h1>
+
+    {{ include('blog/_form.html.twig') }}
+
+    <a class="btn btn-secondary" href="{{ path('blog') }}"><i class="fa fas-arrow-circle-left"></i> retour à la page blog </a>
+    <br>
+    <br></div>
+<div class="col-1"></div></div>
+    
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

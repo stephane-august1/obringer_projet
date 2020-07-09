@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-2"></div>
+    
+    <div class="col-2">
+<a class="btn btn-secondary" href="{{ path('avis_admin_index') }}">
+        <i class="fas fa-arrow-circle-left"></i> retour à la liste</a>
+        </div>
+        <div class="col-4">
+    <h1 class="text-center">Avis admin show</h1>
+
+    </div></div>
+<div class="mt-2 row">
+    <div class="col-2"></div>
+    <div class="col-4">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id de l'avis</th>
+                <td>{{ avi.id }}</td>
+            </tr>
+             <tr>
+                <th>Ecrit par</th>
+                <td>{{ avi.user.name }}</td>
+            </tr>
+            <tr>
+                <th>Qualite</th>
+                <td>{{ avi.qualite }}</td>
+            </tr>
+            <tr>
+                <th>Delais</th>
+                <td>{{ avi.delais }}</td>
+            </tr>
+            <tr>
+                  </tbody>
+    </table>  </div><div class="col-4">
+    <table class="table">
+        <tbody>
+                <th>Expertise</th>
+                <td>{{ avi.expertise }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ avi.prix }}</td>
+            </tr>
+            <tr>
+                <th>Details</th>
+                <td>{{ avi.details }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ avi.date ? avi.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Produitconcerne</th>
+                <td>{{ avi.produitconcerne }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-2">
+          <a class="btn btn-primary "href="{{ path('admin_avis_edit', {'id': avi.id}) }}">
+              <i class="fas fa-edit"></i> éditer</a>  
+        </div>
+         <div class="col-6">
+             
+    {{ include('admin/avis/_delete_form.html.twig') }} 
+              </div>
+    </div>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+{% endblock %}

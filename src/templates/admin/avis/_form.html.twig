@@ -1,0 +1,30 @@
+{{ form_start(form) }}
+<div class="row"> 
+<div class="col-10">
+    
+    </div>
+</div>
+<div class="row">
+        <div class=" col-3"></div>
+        <div class="mt-4 col-2">
+       
+            {{ form_row(form.delais) }}
+            {{ form_row(form.qualite)}}
+        </div>
+        <div class="mt-4 col-2 offset-2">
+            {{ form_row(form.expertise) }}
+            {{ form_row(form.prix) }}
+        </div>
+</div>
+<div class="row">
+    <div class="col-6 offset-3">
+     {{ form_row(form.produitconcerne,{'attr':{'placeholder':'Le produit concerné'}}) }}   
+     {{ form_row(form.details,{'attr':{'placeholder':' Détails de votre avis'}}) }} 
+  
+    <button class="btn btn-sm btn-outline-success" style="margin-left:80%;">{{ button_label|default('Sauvegarder') }}</button>
+     </div>
+</div></div>
+ 
+          
+   
+{{ form_end(form) }}

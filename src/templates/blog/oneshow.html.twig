@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Bienvenue {{ blog.0.user.name }}</h1>
+    
+    <h1 class="text-center">Vos article(s)</h1>
+    
+
+    
+
+    <table class="text-center table">
+    <thead> <tr>
+                <th>Id</th>
+                 <th>Title</th>
+                 <th>Created_at</th>
+                 <th>Imagesrc</th>
+                 <th>Texte</th>
+                 <th>action</th>
+            </tr>
+    
+    </thead>
+     <div class="text-center row"><div class="col-lg-4">
+    
+        <tbody>{% for blog in blog %}
+            <tr>
+                
+                <td>{{ blog.id }}</td>
+            
+               
+                <td>{{ blog.title }}</td>
+            
+                
+                <td>{{ blog.createdAt ? blog.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            
+                
+                <td>{{ blog.imagesrc }}</td>
+            
+                
+                <td>{{ blog.texte }}</td>
+     
+
+    <td> <a href="{{ path('blog_edit', {'id': blog.id}) }}">edit</a>
+
+    {{ include('blog/_delete_form.html.twig') }}</td>
+
+   
+           </tr>
+        </tbody>{% endfor %}
+    </table>
+    <a href="{{ path('blog') }}">back to list</a>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

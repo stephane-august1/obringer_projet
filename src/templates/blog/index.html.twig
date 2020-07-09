@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog index{% endblock %}
+
+{% block body %}
+    <h1>Blog index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center">Id</th>
+                <th class="text-center">Titre</th>
+                <th class="text-center">Crée le</th>
+               
+                <th class="text-center">image</th>
+                <th class="text-center">Article</th>
+                <th></th>
+                <th class="text-center">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for blog in blogs %}
+            <tr>
+                <td class="text-center">{{ blog.id }}</td>
+                <td class="text-center">{{ blog.title }}</td>
+                <td class="text-center">{{ blog.createdAt ? blog.createdAt|date('Y-m-d') : '' }}</td>
+                
+                <td class="text-center"><img class="img-fluid" src="/../images/{{blog.imagesrc}}" alt="/../images/{{blog.imagesrc}}" style="max-width:62%;"></td>
+                <td class="colspan-2">{{ blog.texte }}</td>
+                <td></td>
+                <td>
+                    <a class="btn btn-secondary mb-1" style="min-width:92px;" href="{{ path('blog_show', {'id': blog.id}) }}"><i class="far fa-eye"></i> voir</a>
+                    <a class="btn btn-primary" href="{{ path('blog_edit', {'id': blog.id}) }}"><i class="far fa-edit"></i> éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('blog_new') }}">Create new</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

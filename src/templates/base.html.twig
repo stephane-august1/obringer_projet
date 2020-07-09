@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <html lang="{{ app.request.locale }}">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>{% block title %}Cabinet de Naturopathie et centre de vitalité,bien-être Mélanie Obringer  !{% endblock %}</title>
+      {% block stylesheets %}
+      {{ encore_entry_link_tags('app') }}
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css'/>
+      {% endblock %}
+      <link rel="icon" type="image/x-icon" href="{{ asset('./images/obringer.ico') }}" />
+    </head>
+
+    <body>
+      {# start nav bar#}
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <p style="font-size:0.7rem;"><a class="navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/logo_obringer.png')}}" alt="{{asset('./images/logo_obringer.png')}}" style="width:12%;"> Cabinet de Naturopathie de vitalité et bien-être Mélanie Obringer</p></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+          aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto" style="margin-left:-16%;">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('home') }}"> <i class="fas fa-home"></i>Accueil </a>
+            </li>
+            {##}
+            <li class="nav-item">
+            <div class="dropdown">
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fab fa-rocketchat"></i>  Blog / Avis
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{path('blog')}}">
+                <i class="fas fa-comments"></i> blog</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ path('home_avis') }}">
+                  <i class="far fa-edit"></i> Les Avis</a>
+            
+              <div class="dropdown-divider"></div>
+                <a class=" dropdown-item" href="{{ path('video') }}">
+                  <i class="text-center fas fa-video"></i> Video</a>
+              </div>
+            </div>
+          </li>
+            {##}
+           
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('prestations') }}"><i class="text-center fas fa-comments-dollar"></i> Séances & Tarifs</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link"  href="{{ path('cabinet') }}"><i class="text-center fas fa-couch"></i> Cabinet</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link"  href="{{ path('contact') }}"><i class="text-center fas fa-location-arrow"></i> Contact</a>
+            </li>
+            
+          
+            {% if not app.user %}
+            {#<li class="nav-item ">
+              <a class="nav-link" href="{{path('registration')}}">Inscription </a>
+            </li>#}
+
+            {% else %}
+            {#<li class="nav-item">
+              <a class="nav-link" href="{{ path('user_show', {'id': app.user.id}) }}">Mon compte</a>
+            </li>#}
+
+            {% endif %}
+
+          </ul>
+
+
+
+          {% if app.user.roles is defined %}
+
+          {% if is_granted ('ROLE_ADMIN') == false %}
+
+         
+          <li class=" navbar-nav nav-item">
+            <span style="color:orange;font-size:1.6em;float:left">{{ app.user.name }}</span>
+            <img src="{{ asset('avatar.png') }}" style="color:orange;heigth:2em;width:3em;margin-left:6%">
+          </li>
+
+          {% else %}
+       
+          <li class=" navbar-nav nav-item ">
+ <a    href="{{path('admin')}}">
+            <span style="color:lightgreen;font-size:1.6em;float:left">{{ app.user.name }}</span>
+            <img src="{{ asset('avatar.png') }}" style="color:lightgreen;heigth:2em;width:3em;margin-left:6%"></a>
+          </li>
+          {% endif %}
+
+
+          {% endif %}
+
+          {% if not app.user %}
+          {##}
+            <li class="nav-item navbar-nav ">
+            <div class="dropdown">
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-lock"></i>  Connexion / Inscription
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            
+                <a class="dropdown-item" href="{{ path('app_login') }}">
+                  <i class="fab fa-expeditedssl"></i> Connexion</a>
+              <div class="dropdown-divider"></div>
+                <a class=" dropdown-item" href="{{ path('registration') }}">
+                  <i class="text-center fas fa-users"></i> Inscription</a>
+              <div class="dropdown-divider"></div>
+                <a class=" dropdown-item" href="{{ path('app_login') }}">
+                  <i class="fab fa-expeditedssl"></i> Admin</a>
+              </div>
+            </div>
+          </li>
+          {##}
+         
+          {% else %}
+          <li class=" navbar-nav nav-item">
+            <a href="{{ path ("app_logout") }}">
+              <button class="btn  btn-perso ml-3 my-sm-0" type="button"
+                placeholder="deconnexion"><i class="fas fa-share-square"></i> déconnexion
+              </button>
+            </a>
+          </li>
+          {% endif %}
+
+        </div>
+
+      </nav>
+      {# end nav bar#}
+
+{#<button onclick="{{asset('topFunction()')}}" id="myBtn" title="Go to top">#}
+ <button onclick='topFunction()' id="myBtn"  title="Go to top" >&#10148;
+
+</button> 
+      {% block body %}{% endblock %}
+
+      {% block footer %}
+      <footer>
+        <nav class=" fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
+
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto" style="margin-left:33%">
+
+              <li class="nav-item">
+                <a class="nav-link" href="#https://twitter.com/" title="Symfony Twitter">
+                  <i class="fab fa-twitter" style="color:lightgreen;font-size:2rem;" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/Naturopathemelanieobringer/">
+
+                 
+                  <i class="fab fa-facebook" style="font-size:2rem;"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://symfony.com/blog/" title="Symfony Blog">
+                  <i class="fas fa-camera" style="color:lightgrey;font-size:2rem;" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <p class="nav-link">&copy; 01-07-2020 - Obringer Project</p>
+                <p class="nav-link"><br><br></p>
+              </li>
+            </ul>
+            <p ><a href="{#{path('rgpd')}#}" style="color:white;">rgpd</a></p>
+          </div>
+        </nav>
+      </footer>
+
+      {% endblock %}
+      {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+       <script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js'></script>
+       <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.Melanie.fr/mentions_legales/');});</script>
+       <script src="/../js/cookieschoices.js"></script>
+         </script>
+
+   <script src="./../js/scrool-up.js"></script>
+  
+
+      {% endblock %}
+    </body>
+
+  </html>

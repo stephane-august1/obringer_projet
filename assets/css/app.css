@@ -5,13 +5,7 @@ background-color: #431737;
 background-color: #431737;
 
 */
-@font-face {
-    
-    font-family: 'Sacramento',
-    cursive;
-   /* @import url(https://fonts.googleapis.com/css?family=Sacramento);
-*/
-}
+
 body {
     /*background-color: #c40a92;
     background-color: linear-gradient(#7a729e, #6a63c6 60%, #b49fee);

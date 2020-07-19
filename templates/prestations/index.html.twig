@@ -4,35 +4,43 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 98%; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 98%; width: 98%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
 <div class="example-wrapper">
-    <h1 class="mb-4 text-center text-perso" style="color:#c40a92">"<i class="far fa-clock fa-xs"></i>" Les Séances & Prestations "<i class="fas fa-dollar-sign fa-xs "></i>"</h1>
+<div class="row">
+  <div class="col-lg-11 col-md-10 col-sm-10 col-xs-8"><h1 class="mb-4 text-center puce" >"<i class="far fa-clock fa-xs"></i>" Les Séances & Prestations "<i class="fas fa-dollar-sign fa-xs "></i>"</h1></div>
+</div>
+
+    
     
     <div class="mt-4 row">
-      <div class="col-4"> 
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
       <div class="row">
-      <div class="col-12"> <h4 class="text-perso text-center">Auriculothérapie Sevrage du Tabac <i class="fas fa-smoking"></i></h4></div>
-      <div class="col-12 ">    <img src="./images/tabacologie.jpg"
+      <div class="col-12 mt-4"> <h4 class="text-perso text-center">Auriculothérapie Sevrage du Tabac <i class="fas fa-smoking"></i></h4></div>
+      <div class="col-12 mt-3">    <img src="./images/tabacologie.jpg"
     alt="./images/tabac.jpg" class="mt-4 mx-auto d-block" style="max-width:230px;"></div>
       </div> 
        
     
       </div>
-      <div class="col-4"> 
-        <h4 class="text-perso text-center">Auriculothérapie Perte de poids <i class="fas fa-weight"></i></h4>
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+       <div class="row">
+      <div class="col-12 mt-4"> 
+        <h4 class="text-perso text-center">Auriculothérapie Perte de poids <i class="fas fa-weight"></i></h4></div>
         <img src="./images/poids.jpg"
-    alt="./images/poids.jpg" class="mt-4 mx-auto d-block" style="max-width:230px;"></div>
-      <div class="col-4">  
-        <h4 class="text-perso text-center">Auriculothérapie Gestion du stress <i class="fas fa-seedling"></i></h4>
+    alt="./images/poids.jpg" class="mt-4 mx-auto d-block" style="max-width:230px;"></div></div>
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"> 
+       <div class="row">
+      <div class="col-12 mt-4">  
+        <h4 class="text-perso text-center">Auriculothérapie Gestion du stress <i class="fas fa-seedling"></i></h4></div>
         <img src="./images/magnetisme.jpg"
     alt="./images/magnetisme.jpg" class="mt-4 mx-auto d-block " style="max-width:230px;">
       </div>
     </div>
   
-   
+   </div>
   
    
   
@@ -70,8 +78,8 @@
      {##}{% for prestation in prestations %}
       <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12">
       
-   <h3 class="mb-4 puce text-center" ><u style="color:#c40a92;">{{prestation.title}}</u></h3> 
-        <div class="mt-4 card mx-auto mb-2" style="width:18rem;border:0.3px solid grey;">
+   <h3 class=" mb-4 puce text-center" ><u class="mb-5" style="color:#c40a92;">{{prestation.title}}</u></h3> 
+        <div class="mt-4 card mx-auto my-5" style="width:18rem;border:0.3px solid grey;">
             <img src="{{prestation.srcimage}}" class="img-fluid card-img-top" alt="{{prestation.srcimage}}" style="max-height:220px;">
                 <div class="card-body">
                    {# <h6>{{ newproducts.id }}</h6>#}

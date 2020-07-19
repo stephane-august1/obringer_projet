@@ -9,7 +9,30 @@
 </style>
 
 <div class="example-wrapper">
-    <h1 class="purple text-center">Mélanie Obringer Naturopathe <a class="btn btn-perso" href="{{path('contact')}}">Un RDV </a></h1>
+<div class="mt-5 row">
+  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"><h1 class="purple text-center specialfont">Mélanie Obringer Naturopathe</h1></div>
+
+<div class="col-lg-3 col-md-10 col-sm-12 col-xs-12">
+    <a class="btn btn-perso spec" href="{{path('contact')}}">Un RDV </a>
+ </div></div>
+ <div class="row">
+   <div class="mb-4 col-lg-10 col-md-12 col-sm-12 col-xs-12"><h2 class="mb-4 text-center">Votre naturopathe à Forbach</h2></div>
+ </div>
+ <div class="row">
+ <div class="col-lg-1 col-sm-1 col-md-1 col-xs-1"></div>
+   <div class="col-lg-5 col-md-10 col-sm-10 col-xs-12"><h3 class="text-center">Membre des SPN </h3>
+  
+<h4 class="text-center">(Syndicat professionnel de Naturopathie)</h4>
+ 
+ 
+ </div>
+ <div class="col-lg-5 col-md-10 col-sm-12 col-xs-12">
+    <a href="https://syndicat-naturopathie.fr/">https://syndicat-naturopathie.fr/</a>
+  <a href="https://syndicat-naturopathie.fr/"><img src="../images/logoSPN.png" alt="../images/logoSPN.png" style="width:12%;"> </a>
+   </div>
+ </div>
+ 
+ 
  <hr>
 {##}
 <!--slider-->
@@ -29,7 +52,7 @@
           <div class="carousel-item active bd" data-interval="4000">
             <img src="{{ carouselactive.srcimagecarousel}}" class="d-block w-100" alt="{{ carouselactive.srcimagecarousel}}">
               <div class="carousel-caption d-none d-md-block">
-                <h5 style="color:rgb(255, 29, 217);;font-size:2em;margin-top:-36%">{{carouselactive.titlecarousel}}
+                <h5 class="carousel-title" style="color:rgb(255, 29, 217);;font-size:2em;margin-top:-36%">{{carouselactive.titlecarousel}}
                 </h5>
                 <p style="color:rgb(255, 29, 217);margin-top:1%;">{{carouselactive.descriptioncarousel}}
                 </p>
@@ -42,7 +65,7 @@
           <div class="carousel-item bd" data-interval="4000">
               <img src="{{carousel.srcimagecarousel}}" class="d-block w-100" alt="{{carousel.srcimagecarousel}}">
             <div class="carousel-caption d-none d-md-block">
-              <h5 style="color:rgb(255, 29, 217);font-size:2em;margin-top:-36%;">{{carousel.titlecarousel}}</h5>
+              <h5 class="carousel-title" style="color:rgb(255, 29, 217);font-size:2em;margin-top:-36%;">{{carousel.titlecarousel}}</h5>
                 <p style="color:rgb(255, 29, 217);margin-top:1%;">{{carousel.descriptioncarousel}}</p>
             </div>
           </div>
@@ -65,13 +88,25 @@
       <!--//slider-->
 {##}
 <div class="row">
-<div class="col-10 offset-2">
+<div class="col-lg-10 ">
 <div class="mt-5 row">
-    <div class="col-6 puce">
-<h2 style="margin-top:22%;">Naturopathe en Moselle à Forbach <img src="./images/menthe.jpg" alt="./images/menthe.jpg" style="width:25%;"> </h2>
-<h3 class="puce">Mélanie vous propose ses services & séances de naturopathie. </h3></div>
+<div class="col-1"></div>
+    <div class="col-lg-11 col-sm-11 col-md-11 col-xs-11 puce">
+<h2 style="font-size:4vw;margin-top:2%;">Naturopathe en Moselle à Forbach</h2></div></div>
+
+<div class="row">
+  <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2"></div>
+    <div class="col-lg-6 col-sm-8 col-md-8 col-xs-8">
+      <img class="img-fluid" src="./images/menthe.jpg" alt="./images/menthe.jpg" > </div>
+    <div class="mt-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+ <img src="{{asset('./images/melanie.jpg')}}"  alt="{{asset('./images/melanie.jpg')}}" style="width:42%;">
+</div>
+</div>
+
 <div class="col-6 puce">
-   <img src="{{asset('./images/melanie.jpg')}}"  alt="{{asset('./images/melanie.jpg')}}" style="width:42%;">
+<h3 class="puce">Mélanie vous propose ses services & séances de naturopathie. </h3>
+
+  
 </div>
 </div></div></div>
 <div class="row">
@@ -81,37 +116,37 @@
 
 
 
-Aujourd’hui  l’O.M.S.  définit  la santé pour l’individu comme un « état complet de bien-être  physique, mental et social », et toujours selon l’OMS, "la naturopathie est un ensemble de méthodes de soins visant à renforcer les défenses de l'organisme par des moyens considérés comme naturels et biologiques''.
+Aujourd’hui  l’O.M.S.  définit  la vitalité pour l’individu comme un « état complet de bien-être  physique, mental et social », et toujours selon l’OMS, "la naturopathie est un ensemble de méthodes de soins visant à renforcer les défenses de l'organisme par des moyens considérés comme naturels et biologiques''.
 
 La naturopathie va bien au-delà de cette définition, pour faire simple elle défend le  « capital santé »   qui repose sur  l’art de rester en bonne santé, d’être acteur de sa santé et prendre soin de soi par des moyens naturels.
 
 La naturopathie englobe l’individu sur tous les plans de l’être.
 -physique, énergétique, émotionnel, mental,  spirituel, socioculturel et même planétaire (écologie).
 
-On peut donc en conclure que la naturopathie a pour mission de prévenir la maladie, de conserver la santé, ou de l’optimiser par un mode de vie plus sain.</p></div>
+On peut donc en conclure que la naturopathie a pour mission de prévenir la maladie, de conserver la vitalité, ou de l’optimiser par un mode de vie plus sain.</p></div>
 </div>
 <div class="row">
 <div class="col-8 offset-2">
-<h4 class="ml-4 mr-4" style="color:purple;">La naturopathie contribue ainsi à la promotion d’une santé globale et durable, elle s’inscrit en parfaite complémentarité avec les autres pratiques sanitaires et/ou paramédicales.</h4>
+<h4 class="ml-4 mr-4" style="color:purple;">La naturopathie contribue ainsi à la promotion d’une vitalité globale et durable, elle s’inscrit en parfaite complémentarité avec les autres pratiques sanitaires et/ou paramédicales.</h4>
 </div></div>
 <hr>
 <div class="row">
 <div class="col-10 offset-1">
 <h2 class="text-center">Services : </h2>
 <div class="mt-5 row">
-    <div class="col-12 puce">
+    <div class="col-lg-12 puce">
         <div class="row">
-            <div class=" col-4 text-center"> Massages aux Pierres Chaudes 
+            <div class="  col-lg-4 col-sm-12 col-md-12 col-xs-12  text-center"> Massages aux Pierres Chaudes 
                 <div class="mt-3 col-12">
                     <img src="{{asset('./images/massage-pierre.webp')}}"  alt="{{asset('./images/massage-pierre.jpg')}}" style="width:32%;">
                 </div></div>
             
-  <div class=" col-4 text-center">Luminothérapie
+  <div class="  col-lg-4 col-sm-12 col-md-12 col-xs-12  text-center">Luminothérapie
       <div class="mt-3 col-12">
       <img src="{{asset('./images/lumino.jpg')}}"  alt="{{asset('./images/lumino.jpg')}}" style="width:32%;">
        </div>
       </div>
-  <div class=" col-4 text-center">Massages Siam
+  <div class=" col-lg-4 col-sm-12 col-md-12 col-xs-12 text-center">Massages Siam
       <div class="mt-3 col-12">
       <img src="{{asset('./images/massages_siam.jpg')}}"  alt="{{asset('./images/massages_siam.jpg')}}" style="width:32%;">
        </div>
@@ -120,17 +155,17 @@ On peut donc en conclure que la naturopathie a pour mission de prévenir la mala
 <div class="mt-5 row">
     <div class="col-12 puce">
         <div class="row">
-            <div class=" col-4 text-center"> Auriculothérapie 
+            <div class="  col-lg-4 col-sm-12 col-md-12 col-xs-12  text-center"> Auriculothérapie 
                 <div class="mt-3 col-12">
                     <img src="{{asset('./images/auriculotherapie2.jpeg')}}"  alt="{{asset('./images/auriculotherapie2.jpeg')}}" style="width:32%;">
                 </div></div>
             
-  <div class=" col-4 text-center">Magnétisme
+  <div class="  col-lg-4 col-sm-12 col-md-12 col-xs-12  text-center">Magnétisme
       <div class="mt-3 col-12">
-      <img src="{{asset('./images/physiotherapy.webp')}}"  alt="{{asset('./images/physiotherapy.webp')}}" style="width:32%;">
+      <img src="{{asset('./images/magnetisme.jpg')}}"  alt="{{asset('./images/magnetisme.jpg')}}" style="width:32%;">
        </div>
       </div>
-  <div class=" col-4 text-center">Tabacologie
+  <div class="  col-lg-4 col-sm-12 col-md-12 col-xs-12 text-center">Tabacologie
       <div class="mt-3 col-12">
       <img src="{{asset('./images/tabacologie.jpg')}}"  alt="{{asset('./images/tabacologie.jpg')}}" style="width:32%;">
        </div>

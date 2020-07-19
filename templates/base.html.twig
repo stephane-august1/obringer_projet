@@ -8,7 +8,8 @@
       <title>{% block title %}Cabinet de Naturopathie et centre de vitalité,bien-être Mélanie Obringer  !{% endblock %}</title>
       {% block stylesheets %}
       {{ encore_entry_link_tags('app') }}
-      
+      <link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
       {% endblock %}
       <link rel="icon" type="image/x-icon" href="{{ asset('./images/obringer.ico') }}" />
     </head>
@@ -16,7 +17,7 @@
     <body>
       {# start nav bar#}
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <p style="font-size:0.7rem;"><a class="navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/logo_obringer.png')}}" alt="{{asset('./images/logo_obringer.png')}}" style="width:12%;"> Cabinet de Naturopathie de vitalité et bien-être Mélanie Obringer</p></a>
+        <p style="font-size:0.7rem;"><a class=" entete navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/logo_obringer.png')}}" alt="{{asset('./images/logo_obringer.png')}}" style="width:12%;"> Cabinet de Naturopathie de vitalité ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et bien-être Mélanie Obringer</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
           aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,11 +32,11 @@
             <li class="nav-item">
             <div class="dropdown">
               <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fab fa-rocketchat"></i>  Blog / Avis
+                <i class="fas fa-camera"></i>  Photos / Avis
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{{path('blog')}}">
-                <i class="fas fa-comments"></i> blog</a>
+                <a class="dropdown-item" href="{{path('photo')}}">
+                <i class="fas fa-camera"></i> Photos</a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ path('home_avis') }}">
                   <i class="far fa-edit"></i> Les Avis</a>
@@ -144,7 +145,7 @@
       <footer>
         <nav class=" fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
 
-          <div class="collapse navbar-collapse" id="navbarColor02">
+          <div class="collapse navbar-collapse" >
             <ul class="navbar-nav mr-auto" style="margin-left:33%">
 
               <li class="nav-item">

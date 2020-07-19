@@ -22,7 +22,7 @@ class ContactType extends AbstractType
                 'required' => true,
                 'label' => 'Votre nom *',
                 'attr' => [
-                    'placeholder' => 'Votre nom',
+                    'placeholder' => 'nom',
                 ]
             ])
 
@@ -30,27 +30,27 @@ class ContactType extends AbstractType
                 'required' => false,
                 'label' => 'Votre numéro de téléphone',
                 'attr' => [
-                    'placeholder' => 'Votre numéro de téléphone',
+                    'placeholder' => 'téléphone',
                 ]
             ])
             ->add('mail', EmailType::class, [
                 'required' => true,
                 'label' => 'Votre adresse email *',
                 'attr' => [
-                    'placeholder' => 'Votre adresse email',
+                    'placeholder' => 'Votre email',
                 ]
             ])
             ->add('sujet', TextType::class, [
                 'required' => true,
                 'label' => 'Le Sujet *',
                 'attr' => [
-                    'placeholder' => 'Indiquer le sujet',
+                    'placeholder' => 'le sujet',
                 ]
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Votre message *',
                 'attr' => [
-                    'placeholder' => 'Placer votre message',
+                    'placeholder' => 'Votre message',
                 ]
             ])
             ->add(

@@ -281,6 +281,9 @@ table thead tr .top-br th {
     h1{
         font-size:6vw !important;
     }
+    h3.puce{
+        font-size:3.3vw !important;
+    }
   .entete {
       font-size: 1.0rem !important;
   }
@@ -303,6 +306,10 @@ a.btn.btn-perso.spec {
 .carousel-indicators{
    visibility:hidden !important;
 }
+.melanie{
+    max-width: 50% !important;
+    margin-left: 23%;
+}
 
 
 }
@@ -319,6 +326,10 @@ a.btn.btn-perso.spec {
 .carousel-title{
     margin-top:200px !important;
 }
+.melanie {
+    max-width: 50% !important;
+    margin-left: 23%;
+}
 
 }
 
@@ -327,8 +338,12 @@ a.btn.btn-perso.spec {
 .entete {
     font-size: 0.9rem !important;
 }
+.melanie {
+    max-width: 50% !important;
+    margin-left: 23%;
 }
-/*******grand*********/
+}
+/*******tres grand*********/
 @media(min-width:992px) and (max-width:1085px) {
     .entete {
         font-size: 0.8rem !important;

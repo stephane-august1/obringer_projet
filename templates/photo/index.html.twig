@@ -4,13 +4,28 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 99%; width: 99%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    inserer des photos ici :!!!!!!!!!!!
-</div>
+   <div class="container">
+        <div class="mt-2 mb-4 row text-center perso">
+       {% for image in images %}
+           
+               <div class="mt-4 mb-4 col-lg-4 col-md-5 col-sm-12 col-xs-12 "> 
+        <img class="rounded-lg imgbig" src="./images/{{ image.source}}" alt="{{image.source}}" >
+        
+        <h3>  {{ image.nom }}</h3></div>
+        {% endfor %}
+      
+       
+  
+   
+</div></div></div><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endblock %}

@@ -76,4 +76,16 @@ class HomeController extends AbstractController
 
         ]);
     }
+    /**
+     * @Route("/rgpd", name="rgpd")
+     */
+    public function rgpd()
+    {
+
+        return $this->render('home/rgpd.html.twig', [
+            'controller_name' => 'HomeController',
+            //'carousel' => $carousel,
+
+        ]);
+    }
 }

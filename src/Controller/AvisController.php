@@ -56,8 +56,8 @@ class AvisController extends AbstractController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
-                $user = $session->getUser();
-                $avi->setUser($user);
+                // $user = $session->getUser();
+                $avi->setUser($this->getUser());
                 $avi->setDate(new dateTime('now'));
                 $entityManager->persist($avi);
                 $entityManager->flush();

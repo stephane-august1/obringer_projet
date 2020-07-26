@@ -143,34 +143,32 @@
 
       {% block footer %}
       <footer>
-        <nav class=" fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="footer fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
 
           <div class="collapse navbar-collapse" >
             <ul class="navbar-nav mr-auto" style="margin-left:33%">
 
+             
               <li class="nav-item">
-                <a class="nav-link" href="#https://twitter.com/" title="Symfony Twitter">
-                  <i class="fab fa-twitter" style="color:lightgreen;font-size:2rem;" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/Naturopathemelanieobringer/">
+                <a class="nav-link" href="https://www.facebook.com/Naturopathemelanieobringer/" style="color:lightgreen;font-size:1.3rem;">
 
                  
-                  <i class="fab fa-facebook" style="font-size:2rem;"></i>
+                  <i class="fab fa-facebook fa-2x" ></i>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://symfony.com/blog/" title="Symfony Blog">
-                  <i class="fas fa-camera" style="color:lightgrey;font-size:2rem;" aria-hidden="true"></i>
-                </a>
-              </li>
+           
               <li class="nav-item ">
-                <p class="nav-link">&copy; 01-07-2020 - Obringer Project</p>
+                <p class="nav-link">&copy; 01-07-2020 - Obringer </p>
+                <p class="nav-link"><br><br></p>
+              </li>
+               <li class="nav-item ">
+                <p class="nav-link"><a href="{{path('rgpd')}}" style="color:white;">Mentions_legales</a>
+                
+                </a> </p>
                 <p class="nav-link"><br><br></p>
               </li>
             </ul>
-            <p ><a href="{#{path('rgpd')}#}" style="color:white;">rgpd</a></p>
+           
           </div>
         </nav>
       </footer>

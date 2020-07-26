@@ -23,23 +23,26 @@ h2 {
     color: #431737;
     color: #661141;
 }
-h3,h4 {
+
+h3,
+h4 {
     color: #431737;
     color: #661141;
 }
- 
+
 h1.puce {
     color: #431737;
     color: #661141;
     font-size: 2.3rem;
 }
-h1.specialfont{
+
+h1.specialfont {
     color: #431737;
     color: #661141;
     font-size: 4.3rem;
     /*font-family:"Sacramento";*/
     font-family: 'Parisienne',
-    cursive;
+        cursive;
 }
 
 
@@ -275,74 +278,115 @@ table thead tr .top-br th {
         1px 0 #000,
         0 -1px #000;
 }
+
 /********petit********/
 
 @media(max-width:575px) {
-    h1{
-        font-size:6vw !important;
+    h1 {
+        font-size: 6vw !important;
     }
-    h3.puce{
-        font-size:3.3vw !important;
+
+    h3.puce {
+        font-size: 3.3vw !important;
     }
-  .entete {
-      font-size: 1.0rem !important;
-  }
-  .navbar-nav{
-margin-left:34% !important;
-  }
-a.btn.btn-perso.spec {
-    margin-left: 22% !important;
-    visibility:hidden !important;
-}
 
-/*carousel*/
-.carousel-control-prev-icon {
-  visibility:hidden !important;
-}
+    .entete {
+        font-size: 1.0rem !important;
+    }
 
-.carousel-control-next-icon {
-  visibility:hidden !important;
-}
-.carousel-indicators{
-   visibility:hidden !important;
-}
-.melanie{
-    max-width: 50% !important;
-    margin-left: 23%;
-}
+    .navbar-nav {
+        margin-left: 34% !important;
+    }
 
+    a.btn.btn-perso.spec {
+        margin-left: 22% !important;
+        visibility: hidden !important;
+    }
+
+    /*carousel*/
+    .carousel-control-prev-icon {
+        visibility: hidden !important;
+    }
+
+    .carousel-control-next-icon {
+        visibility: hidden !important;
+    }
+
+    .carousel-indicators {
+        visibility: hidden !important;
+    }
+
+    .melanie {
+        max-width: 50% !important;
+        margin-left: 23%;
+    }
+
+    .imgbig {
+        width: 33%;
+    }
 
 }
 
 /********moyen********/
 
 @media(min-width:575px) and (max-width:990px) {
-     .navbar-nav {
-         margin-left: 34% !important;
-     }
-.entete{
-    font-size:0.8rem !important;
-}
-.carousel-title{
-    margin-top:200px !important;
-}
-.melanie {
-    max-width: 50% !important;
-    margin-left: 23%;
-}
+    .navbar-nav {
+        margin-left: 34% !important;
+    }
+
+    .entete {
+        font-size: 0.8rem !important;
+    }
+
+    .carousel-title {
+        margin-top: 200px !important;
+    }
+
+    .melanie {
+        max-width: 50% !important;
+        margin-left: 23%;
+    }
+
+    .imgbig {
+        width: 33%;
+    }
+
+    .imgbig:hover {
+        border: 3px double black;
+        width: 56%;
+
+    }
+
+    footer .navbar.footer {
+        visibility: visible !important;
+    }
 
 }
 
 /*******grand*********/
 @media(min-width:991px) {
-.entete {
-    font-size: 0.9rem !important;
+    .imgbig {
+        width: 33%;
+        border: 1px solid black;
+
+    }
+
+    .imgbig:hover {
+        border: 3px double black;
+        width: 66%;
+
+    }
+
+    .entete {
+        font-size: 0.9rem !important;
+    }
+
+    .melanie {
+        max-width: 50% !important;
+        margin-left: 23%;
+    }
 }
-.melanie {
-    max-width: 50% !important;
-    margin-left: 23%;
-}
-}
+
 /*******tres grand*********/
 @media(min-width:992px) and (max-width:1085px) {
     .entete {

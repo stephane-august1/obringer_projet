@@ -13,6 +13,7 @@ body {
     background-color: #b8c687;
     background-color: #D4EE9F;
     color: lightblue;
+    overflow-x: hidden;
 }
 
 .purple {
@@ -287,13 +288,19 @@ footer .navbar {
 /********petit********/
 
 @media(max-width:575px) {
-    footer .navbar {
-        margin-bottom: 0px;
-        height: 181px !important;
-    }
+    footer {}
 
     .footrow {
-        margin-left: 0%;
+        margin-left: 10%;
+        margin-bottom: 3px !important;
+    }
+
+    ul.footer {
+        margin: none !important;
+    }
+
+    footer .navbar.footer {
+        visibility: visible !important;
     }
 
 
@@ -311,7 +318,8 @@ footer .navbar {
     }
 
     .navbar-nav {
-        margin-left: 34% !important;
+        margin-left: 8% !important;
+        font-size: 1.3rem !important;
     }
 
     a.btn.btn-perso.spec {
@@ -371,6 +379,20 @@ footer .navbar {
 
     img.imgmodal .img-fluid .card-img-top {
         margin-left: none;
+        max-width: 230px !important;
+    }
+
+    body {
+
+
+        overflow-x: hidden;
+        margin-right: 15px;
+    }
+
+    .imgformate {
+        max-height: 230px !important;
+        max-width: 230px !important;
+
     }
 
 }
@@ -384,11 +406,38 @@ footer .navbar {
     img.imgmodal {
         margin-left: 14% !important;
     }
+
+    body {
+
+
+        overflow-x: hidden;
+        margin-right: 15px;
+    }
+
+    .footrow {
+        margin-left: 10%;
+    }
+
+    ul.footer {
+        margin: none !important;
+    }
+
+    footer .navbar.footer {
+        visibility: visible !important;
+    }
+
 }
 
 /********moyen********/
 
 @media(min-width:567px) and (max-width:990px) {
+    body {
+
+
+        overflow-x: hidden;
+        margin-right: 15px;
+    }
+
     div .modal-body {
         margin-left: 10% !important;
     }
@@ -440,6 +489,13 @@ footer .navbar {
 
 /*******grand*********/
 @media(min-width:991px) {
+    body {
+
+
+        overflow-x: hidden;
+        margin-right: 15px;
+    }
+
     .footrow {
         margin-left: 32%;
         margin-top: 4%;

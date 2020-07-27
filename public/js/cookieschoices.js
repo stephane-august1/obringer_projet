@@ -31,8 +31,8 @@
     var dismissLinkId = 'cookieChoiceDismiss';
 
     function _createHeaderElement(cookieText, dismissText, linkText, linkHref) {
-      var butterBarStyles = 'width:100%;background-color:#000000;color:#FFFFFF;' +
-          'margin:0; left:0;top:0; padding:4px;z-index:1000;text-align:center;';
+      var butterBarStyles = 'position:fixed;width:100%;background-color:#FFA500;color:#000000;' +
+          'margin:0; left:0; top:150px; padding:4px;z-index:1000;text-align:center;';
 
       var cookieConsentElement = document.createElement('div');
       cookieConsentElement.id = cookieConsentId;
@@ -49,7 +49,7 @@
 
     function _createDialogElement(cookieText, dismissText, linkText, linkHref) {
       var glassStyle = 'position:fixed;width:100%;height:100%;z-index:999;' +
-          'top:0;left:0;opacity:0.5;filter:alpha(opacity=50);' +
+          'top:50px;left:0;opacity:0.5;filter:alpha(opacity=50);' +
           'background-color:#ccc;';
       var dialogStyle = 'z-index:1000;position:fixed;left:50%;top:50%';
       var contentStyle = 'position:relative;left:-50%;margin-top:-25%;' +
@@ -103,7 +103,7 @@
       dismissLink.id = dismissLinkId;
       dismissLink.href = '#';
       dismissLink.style.marginLeft = '15px';
-      dismissLink.style.color = '#FFFFFF';
+      dismissLink.style.color = '#000000';
       return dismissLink;
     }
 
@@ -113,7 +113,7 @@
       infoLink.href = linkHref;
       infoLink.target = '_blank';
       infoLink.style.marginLeft = '15px';
-      infoLink.style.color = '#FFFFFF';
+      infoLink.style.color = '#000000';
       return infoLink;
     }
 

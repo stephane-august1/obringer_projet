@@ -31,7 +31,7 @@
             {##}
             <li class="nav-item">
             <div class="dropdown">
-              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="display" {{path('photo')}}>
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="display" href="{{path('photo')}}">
                 <i class="fas fa-camera"></i>  Photos / Avis
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -102,7 +102,7 @@
           {##}
             <li class="nav-item navbar-nav ">
             <div class="dropdown">
-              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ path('app_login') }}">
                 <i class="fas fa-lock"></i>  Connexion / Inscription
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -142,22 +142,22 @@
       {% block body %}{% endblock %}
 
       {% block footer %}
-      <footer class="fixed-bottom">
-        <nav class="fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
+      <footer class="">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="row footrow plus">
-            <div class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-10">
+            <div class="mt-5 text-center col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <a class="foot-link " href="https://www.facebook.com/Naturopathemelanieobringer/" style="color:lightgreen;font-size:1.3rem;"><i class="fab fa-facebook fa-2x" ></i>
           </a>
-        </div>
-        <div class="text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        
+        
           <p class="foot-link">&copy; 01-07-2020 - Obringer </p>
         
         </div>
         <div class="text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
-          <p class="nav-link">
+          <p class="foot-link">
           <a href="{{path('rgpd')}}" style="color:white;">Mentions_legales</a>
           </a> </p>
-          <p class="nav-link"><br><br></p>
+          
         </div>
       </div>
     
@@ -173,9 +173,10 @@
       {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
        <script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js'></script>
-       <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.Melanie.fr/mentions_legales/');});</script>
        <script src="/../js/cookieschoices.js"></script>
-         </script>
+       <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.obringer-melanie-naturopathe.fr/mentions_legales/');});</script>
+       
+        
 
    <script src="./../js/scrool-up.js"></script>
 

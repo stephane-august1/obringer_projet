@@ -279,9 +279,25 @@ table thead tr .top-br th {
         0 -1px #000;
 }
 
+footer .navbar {
+    margin-bottom: 0px;
+    height: 151px !important;
+}
+
 /********petit********/
 
 @media(max-width:575px) {
+    footer .navbar {
+        margin-bottom: 0px;
+        height: 181px !important;
+    }
+
+    .footrow {
+        margin-left: 0%;
+    }
+
+
+
     h1 {
         font-size: 6vw !important;
     }
@@ -325,11 +341,62 @@ table thead tr .top-br th {
         width: 33%;
     }
 
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        border-radius: 0;
+        color: grey !important;
+        background-color: white !important;
+        float: left !important;
+    }
+
+    .dropdown-menu {
+        color: white !important;
+        background-color: white !important;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        border-radius: 0;
+        color: white !important;
+        background-color: white !important;
+        float: left !important;
+    }
+
+    .dropdown-menu {
+        color: white !important;
+        background-color: white !important;
+    }
+
+    img.imgmodal .img-fluid .card-img-top {
+        margin-left: none;
+    }
+
+}
+
+/********intermediaire*******/
+@media(min-width:567px) and (max-width:620px) {
+    div .modal-body {
+        margin-left: 14% !important;
+    }
+
+    img.imgmodal {
+        margin-left: 14% !important;
+    }
 }
 
 /********moyen********/
 
-@media(min-width:575px) and (max-width:990px) {
+@media(min-width:567px) and (max-width:990px) {
+    div .modal-body {
+        margin-left: 10% !important;
+    }
+
+    img.imgmodal {
+        margin-left: 14% !important;
+    }
+
     .navbar-nav {
         margin-left: 34% !important;
     }
@@ -357,6 +424,14 @@ table thead tr .top-br th {
 
     }
 
+    .footrow {
+        margin-left: 10%;
+    }
+
+    ul.footer {
+        margin: none !important;
+    }
+
     footer .navbar.footer {
         visibility: visible !important;
     }
@@ -365,6 +440,19 @@ table thead tr .top-br th {
 
 /*******grand*********/
 @media(min-width:991px) {
+    .footrow {
+        margin-left: 32%;
+        margin-top: 4%;
+    }
+
+    div .modal-body {
+        margin-left: 10% !important;
+    }
+
+    img.imgmodal {
+        margin-left: 14% !important;
+    }
+
     .imgbig {
         width: 33%;
         border: 1px solid black;

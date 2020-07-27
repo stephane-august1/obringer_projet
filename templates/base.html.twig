@@ -31,7 +31,7 @@
             {##}
             <li class="nav-item">
             <div class="dropdown">
-              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class=" nav-link dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="display" {{path('photo')}}>
                 <i class="fas fa-camera"></i>  Photos / Avis
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -142,36 +142,32 @@
       {% block body %}{% endblock %}
 
       {% block footer %}
-      <footer>
-        <nav class="footer fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
-
-          <div class="collapse navbar-collapse" >
-            <ul class="navbar-nav mr-auto" style="margin-left:33%">
-
-             
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/Naturopathemelanieobringer/" style="color:lightgreen;font-size:1.3rem;">
-
-                 
-                  <i class="fab fa-facebook fa-2x" ></i>
-                </a>
-              </li>
-           
-              <li class="nav-item ">
-                <p class="nav-link">&copy; 01-07-2020 - Obringer </p>
-                <p class="nav-link"><br><br></p>
-              </li>
-               <li class="nav-item ">
-                <p class="nav-link"><a href="{{path('rgpd')}}" style="color:white;">Mentions_legales</a>
+      <footer class="fixed-bottom">
+        <nav class="fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="row footrow plus">
+            <div class="text-center col-lg-4 col-md-4 col-sm-4 col-xs-10">
+          <a class="foot-link " href="https://www.facebook.com/Naturopathemelanieobringer/" style="color:lightgreen;font-size:1.3rem;"><i class="fab fa-facebook fa-2x" ></i>
+          </a>
+        </div>
+        <div class="text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <p class="foot-link">&copy; 01-07-2020 - Obringer </p>
+        
+        </div>
+        <div class="text-center col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <p class="nav-link">
+          <a href="{{path('rgpd')}}" style="color:white;">Mentions_legales</a>
+          </a> </p>
+          <p class="nav-link"><br><br></p>
+        </div>
+      </div>
+    
+      
+    
+  </nav>
+</footer>
+              
+              
                 
-                </a> </p>
-                <p class="nav-link"><br><br></p>
-              </li>
-            </ul>
-           
-          </div>
-        </nav>
-      </footer>
 
       {% endblock %}
       {% block javascripts %}

@@ -13,7 +13,7 @@ body {
     color: rgb(249, 237, 253);
     background-color: #D4EE9F;
     background-color: #f8ffdc;
-    
+
     color: lightblue;
     overflow-x: hidden;
 }
@@ -290,17 +290,42 @@ footer .navbar {
 /********petit********/
 
 @media(max-width:575px) {
-
-    .hauteur{
-        margin-top:32% !important;
+    .cvfont {
+        color: #431737;
+        color: #661141;
+        font-size: 7.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
     }
-      .slider {
+
+    .cardcv {
+
+
+        background: url('./../../public/images/fruit.jpg') 100% -66% no-repeat;
+
+
+        left: 5px;
+    }
+
+    .titlecard {
+        margin-top: 13%;
+
+    }
+
+    .hauteur {
+        margin-top: 0% !important;
+    }
+
+    .slider {
         width: 97% !important;
         height: 88% !important;
-      }
-    .vignette{
-        width:100%;
     }
+
+    .vignette {
+        width: 100%;
+    }
+
     h1.specialfont {
         color: #431737;
         color: #661141;
@@ -309,12 +334,14 @@ footer .navbar {
         font-family: 'Parisienne',
             cursive;
     }
-    h4{
+
+    h4 {
         color: #431737;
         color: #661141;
         font-size: 4.6vw !important;
 
     }
+
     footer {}
 
     .footrow {
@@ -426,16 +453,42 @@ footer .navbar {
 
 /********intermediaire*******/
 @media(min-width:567px) and (max-width:620px) {
-    .hauteur {
-        margin-top: 12% !important;
+    .cvfont {
+        color: #431737;
+        color: #661141;
+        font-size: 7.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
     }
-     .slider {
-         width: 80% !important;
-         height: 80% !important;
-     }
-     .vignette {
-         width: 100%;
-     }
+
+    .cardcv {
+
+
+        background: url('./../../public/images/fruit.jpg') 40% 0 no-repeat;
+
+
+        left: 0px;
+    }
+
+    .titlecard {
+        margin-top: 3%;
+
+    }
+
+    .hauteur {
+        margin-top: 2% !important;
+    }
+
+    .slider {
+        width: 80% !important;
+        height: 80% !important;
+    }
+
+    .vignette {
+        width: 100%;
+    }
+
     div .modal-body {
         margin-left: 14% !important;
     }
@@ -468,16 +521,44 @@ footer .navbar {
 /********moyen********/
 
 @media(min-width:567px) and (max-width:990px) {
-    .hauteur {
-        margin-top: 6% !important;
+    .cvfont {
+        color: #431737;
+        color: #661141;
+        font-size: 3.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
     }
-     .slider {
-         width: 98% !important;
-         height: 80% !important;
-     }
-     .vignette {
-         width: 55%;
-     }
+
+    .cardcv {
+
+
+        background: url('./../../public/images/fruit.jpg') 40% 0 no-repeat;
+
+
+        left: 0px;
+        margin-bottom: 12%;
+    }
+
+    .titlecard {
+        margin-top: 13%;
+
+    }
+
+
+    .hauteur {
+        margin-top: 16% !important;
+    }
+
+    .slider {
+        width: 98% !important;
+        height: 80% !important;
+    }
+
+    .vignette {
+        width: 55%;
+    }
+
     body {
 
 
@@ -536,13 +617,43 @@ footer .navbar {
 
 /*******grand*********/
 @media(min-width:991px) {
+    .cvfont {
+        color: #431737;
+        color: #661141;
+        font-size: 1.9vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
+    .cardcv {
+
+
+        background: url('./../../public/images/fruit.jpg') 40% 0 no-repeat;
+
+
+        left: 0px;
+        margin-bottom: 12%;
+    }
+
+    .titlecard {
+        margin-top: 22%;
+
+    }
+
+    .hauteur {
+        margin-top: 43%;
+    }
+
     .slider {
         width: 100% !important;
         height: 100% !important;
     }
-     .vignette {
-         width: 75%;
-     }
+
+    .vignette {
+        width: 75%;
+    }
+
     body {
 
 
@@ -586,7 +697,36 @@ footer .navbar {
 }
 
 /*******tres grand*********/
-@media(min-width:992px) and (max-width:1085px) {
+@media(min-width:992px) and (max-width:1885px) {
+    .cvfont {
+        color: #431737;
+        color: #661141;
+        font-size: 1.9vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
+    .cardcv {
+
+
+        background: url('./../../public/images/fruit.jpg') 0 0 no-repeat;
+        background-size: 110% 70%;
+
+
+        left: 0px;
+        margin-bottom: 1%;
+    }
+
+    .titlecard {
+        margin-top: 28%;
+
+    }
+
+    .hauteur {
+        margin-top: -73%;
+    }
+
     .entete {
         font-size: 0.8rem !important;
     }

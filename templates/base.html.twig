@@ -1,11 +1,41 @@
-<!DOCTYPE html>
-<html>
-  <html lang="{{ app.request.locale }}">
+
+  <html lang="{{ app.request.locale }}" prefix="og: http://ogp.me/ns#">
 
     <head>
       <meta charset="UTF-8" />
+
+<meta http-equiv="content-language" content="{{ app.request.locale }}" />
+
+<meta property="og:site_name" content="obringer-melanie-naturopathe" />
+
+<meta property="og:title" content="Cabinet de naturopathie et de réflexologie Mélanie Obringer" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="http://obringer-melanie-naturopathe/" />
+<meta property="og:description" content="Vous êtes à la porte de la vitalité" />
+
+<meta property="og:image" content="http://obringer-melanie-naturopathe.fr/images/melanie.jpg" />
+<meta property="og:image:width" content="860" />
+<meta property="og:image:height" content="1150" />
+<meta property="og:updated_time" content="2020-08-01T18:59:38.2512437Z" />
+<meta property="og:type" content="article" />
+<meta name="robots" content="nofollow" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{% block title %}Cabinet de Naturopathie centre de vitalité et de bien-être Mélanie Obringer  !{% endblock %}</title>
+      <link rel="canonical" href="http://obringer-melanie-naturopathe.fr/" />
+     
+  <meta name="description" content="Cabinet de Naturopathie centre de vitalité et de bien-être Mélanie Obringer.Gestion du poids du stress sevrage tabagique" />
+   <meta lang="" name="keywords" content="Cabinet de Naturopathie centre de vitalité et de bien-être Mélanie Obringer" />
+  <meta name="copyright" content="Webdzine/obringer" />
+     
+    
+       <title>{% block title %}Centre de Naturopathie de vitalité et de bien-être Mélanie Obringer{% endblock %} </title>
+     
+     
+     
       {% block stylesheets %}
       {{ encore_entry_link_tags('app') }}
       <link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
@@ -179,6 +209,16 @@
         
 
    <script src="./../js/scrool-up.js"></script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174248339-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174248339-1');
+</script>
+
 
       {% endblock %}
     </body>

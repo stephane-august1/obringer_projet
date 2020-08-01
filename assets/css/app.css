@@ -10,8 +10,10 @@ body {
     /*background-color: #c40a92;
     background-color: linear-gradient(#7a729e, #6a63c6 60%, #b49fee);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#63598d), color-stop(60%, #666480), to(#c4bdd4));*/
-    background-color: #b8c687;
+    color: rgb(249, 237, 253);
     background-color: #D4EE9F;
+    background-color: #f8ffdc;
+    
     color: lightblue;
     overflow-x: hidden;
 }
@@ -288,6 +290,31 @@ footer .navbar {
 /********petit********/
 
 @media(max-width:575px) {
+
+    .hauteur{
+        margin-top:32% !important;
+    }
+      .slider {
+        width: 97% !important;
+        height: 88% !important;
+      }
+    .vignette{
+        width:100%;
+    }
+    h1.specialfont {
+        color: #431737;
+        color: #661141;
+        font-size: 7.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive;
+    }
+    h4{
+        color: #431737;
+        color: #661141;
+        font-size: 4.6vw !important;
+
+    }
     footer {}
 
     .footrow {
@@ -399,6 +426,16 @@ footer .navbar {
 
 /********intermediaire*******/
 @media(min-width:567px) and (max-width:620px) {
+    .hauteur {
+        margin-top: 12% !important;
+    }
+     .slider {
+         width: 80% !important;
+         height: 80% !important;
+     }
+     .vignette {
+         width: 100%;
+     }
     div .modal-body {
         margin-left: 14% !important;
     }
@@ -431,6 +468,16 @@ footer .navbar {
 /********moyen********/
 
 @media(min-width:567px) and (max-width:990px) {
+    .hauteur {
+        margin-top: 6% !important;
+    }
+     .slider {
+         width: 98% !important;
+         height: 80% !important;
+     }
+     .vignette {
+         width: 55%;
+     }
     body {
 
 
@@ -489,6 +536,13 @@ footer .navbar {
 
 /*******grand*********/
 @media(min-width:991px) {
+    .slider {
+        width: 100% !important;
+        height: 100% !important;
+    }
+     .vignette {
+         width: 75%;
+     }
     body {
 
 

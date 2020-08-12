@@ -1,16 +1,41 @@
-#swiftmailer:
- #   url: '%env(MAILER_URL)%'
-  #  spool: { type: 'memory' }
 swiftmailer:
-    url: 'melanie.obr1ger@gmail.com'
-    username: 'melanie.obr1ger'
-    password: 'obr1melanie'
+   #url: '%env(MAILER_URL)%'
+   #spool: { type: 'memory' }
+   
+    url: 'melanie@obringer-melanie-naturopathe.fr'
+    username: 'melanie@obringer-melanie-naturopathe.fr'
+    password: 'Password1melanie'
     transport : smtp
-    auth_mode: login
-    port: 465
-    encryption: ssl
-    host: smtp.gmail.com
-    spool: { type: 'memory'}
+    auth_mode : login
+    port : 465
+    encryption : ssl
+    host : smtp.webmo.fr
+    spool: { type : 'memory'}
+#  url: 'testermailaugust1@gmail.com'
+#  username: 'testermailaugust1'
+#  password: 'Pa$$word1'
+#  transport : smtp
+#  auth_mode : login
+#  port : 465
+#  encryption : ssl
+#  host : smtp.gmail.com
+#  spool: { type : 'memory'}
 
+#swiftmailer:
+#    url: 'melanie.obr1ger@gmail.com'
+#    username: 'melanie.obr1ger@gmail.com'
+#    password: 'obr1melanie'
+#    transport : smtp
+#    auth_mode: login
+#    port: 465
+#    encryption: ssl
+#    host: smtp.gmail.com
+#    spool: { type: 'memory'}
+ #   stream_options:
+ #           ssl:
+ #               allow_self_signed: true
+ #               verify_peer: false
+ #               verify_peer_name: false
+#
 
 

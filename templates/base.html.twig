@@ -47,7 +47,7 @@
     <body>
       {# start nav bar#}
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <p style="font-size:0.7rem;"><a class=" entete navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/logo_obringer.png')}}" alt="{{asset('./images/logo_obringer.png')}}" style="width:12%;"> Cabinet de Naturopathie de vitalité ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et de bien-être Mélanie Obringer</p></a>
+        <p style="font-size:0.7rem;"><a class=" entete navbar-brand" style="font-size:1.5em;" href="{{ path('home') }}"><img src="{{asset('./images/log2.jpg')}}" alt="{{asset('./images/log2.jpg')}}" style="width:12%;"> Centre de vitalité ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et de bien-être Mélanie Obringer</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
           aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -202,6 +202,7 @@
       {% endblock %}
       {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
+        
        <script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js'></script>
        <script src="/../js/cookieschoices.js"></script>
        <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.obringer-melanie-naturopathe.fr/mentions_legales/');});</script>
@@ -218,8 +219,8 @@
 
   gtag('config', 'UA-174248339-1');
 </script>
-
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
+ <script type="text/javascript">    $(function() { $('#message').delay(40).fadeOut(4500);   });</script>
       {% endblock %}
     </body>
 

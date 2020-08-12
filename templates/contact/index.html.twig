@@ -14,7 +14,11 @@
 
 
 <h2 class="text-center">Prendre Rendez-vous ,Contact </h2>
-
+ {% for message in app.flashes('message') %}
+            <div  class="message alert alert-success alert-dismissible fade show" id="message">
+                {{ message }}
+            </div>
+        {% endfor %}
 <p class="text-center puce">
 Pour toute demande prise de rendez-vous ou suggestions n'hésitez pas à me contacter via le formulaire ci-dessous ou par téléphone.</p>
 <div class="puce row mb-4">
@@ -24,7 +28,7 @@ Pour toute demande prise de rendez-vous ou suggestions n'hésitez pas à me cont
           
             <div class="col-lg-11 col-md-10 col-sm-8 col-xs-8">
 <div class="mb-5 ml-4">
-  {{ form_start(form) }}
+  {#{ form_start(form) }}
    {{ form_row(form.nom) }}
    {{ form_row(form.mail) }}
    {{ form_row(form.telephone) }}
@@ -33,6 +37,12 @@ Pour toute demande prise de rendez-vous ou suggestions n'hésitez pas à me cont
   
    
     {{ form_end(form) }}
+    {{ form_start(form) }#}
+    {#{form_start(form)}}
+    {{form_widget(form)}}
+    {{form_end(form)}#}
+    {{form(form)}}
+   
 
 </div></div>
         </div>

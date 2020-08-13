@@ -56,12 +56,7 @@ h1.specialfont {
 }
 
 /* Slideshow container */
-.carousel.slide {
-    max-width: 99%;
-    max-height: 19%;
-    position: relative;
-    /* margin: auto;*/
-}
+
 
 .card {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0) inset,
@@ -290,6 +285,15 @@ footer .navbar {
 /********petit********/
 
 @media(max-width:575px) {
+    .citation {
+        color: #116618;
+
+        font-size: 7.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
     .cvfont {
         color: #431737;
         color: #661141;
@@ -319,8 +323,8 @@ footer .navbar {
     }
 
     .slider {
-        width: 97% !important;
-        height: 88% !important;
+        max-width: 97% !important;
+        max-height: 88% !important;
     }
 
     .vignette {
@@ -395,6 +399,14 @@ footer .navbar {
         visibility: hidden !important;
     }
 
+    .carousel-title {
+        visibility: hidden !important;
+    }
+
+    p.pcarousel {
+        visibility: hidden !important;
+    }
+
     .melanie {
         max-width: 50% !important;
         margin-left: 23%;
@@ -454,6 +466,15 @@ footer .navbar {
 
 /********intermediaire*******/
 @media(min-width:567px) and (max-width:620px) {
+    .citation {
+        color: #116618;
+
+        font-size: 7.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
     .cvfont {
         color: #431737;
         color: #661141;
@@ -483,8 +504,9 @@ footer .navbar {
     }
 
     .slider {
-        width: 80% !important;
-        height: 80% !important;
+
+        max-width: 80% !important;
+        max-height: 80% !important;
     }
 
     .vignette {
@@ -520,10 +542,21 @@ footer .navbar {
 
 }
 
+
+
 /********moyen********/
 
 @media(min-width:567px) and (max-width:990px) {
+    .citation {
+        color: #116618;
+        font-size: 5.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
     .cvfont {
+        color: cornflowerblue;
         color: #431737;
         color: #661141;
         font-size: 3.6vw !important;
@@ -554,8 +587,9 @@ footer .navbar {
     }
 
     .slider {
-        width: 98% !important;
-        height: 80% !important;
+        margin: auto;
+        max-width: 94% !important;
+        max-height: 80% !important;
     }
 
     .vignette {
@@ -620,6 +654,14 @@ footer .navbar {
 
 /*******grand*********/
 @media(min-width:991px) {
+    .citation {
+        color: #116618;
+        font-size: 5.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
     .cvfont {
         color: #431737;
         color: #661141;
@@ -650,8 +692,8 @@ footer .navbar {
     }
 
     .slider {
-        width: 100% !important;
-        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
     }
 
     .vignette {
@@ -702,6 +744,14 @@ footer .navbar {
 
 /*******tres grand*********/
 @media(min-width:992px) and (max-width:1885px) {
+    .citation {
+        color: #116618;
+        font-size: 5.6vw !important;
+        /*font-family:"Sacramento";*/
+        font-family: 'Parisienne',
+            cursive !important;
+    }
+
     .cvfont {
         color: #431737;
         color: #661141;

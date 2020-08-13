@@ -35,8 +35,8 @@
  <hr>
 {##}
 <!--slider-->
-<div class="mx-auto row">
-  <div class=" col-lg-11 col-md-11 col-sm-11 col-xs-11 mx-auto">
+<div class="row mx-auto">
+  <div class="ml-1 mr-1 col-lg-10 col-md-10 col-sm-10 col-xs-12 mx-auto">
     <div class="bd-example">
       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -46,30 +46,31 @@
          
         </ol>
         <div class="carousel-inner">
-            
+        
       {% for carouselactive in carouselactive %}
-          <div class="carousel-item active bd" data-interval="4000">
-            <img src="{{ carouselactive.srcimagecarousel}}" class="d-block  slider" alt="{{ carouselactive.srcimagecarousel}}">
+           <div class=" mx-auto carousel-item active bd" data-interval="4000">   
+            <img src="{{ carouselactive.srcimagecarousel}}" class="mx-auto d-block  slider" alt="{{ carouselactive.srcimagecarousel}}" style="width:100%;">
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="carousel-title" style="color:rgb(255, 29, 217);;font-size:2em;margin-top:-36%">{{carouselactive.titlecarousel}}
                 </h5>
-                <p style="color:rgb(255, 29, 217);margin-top:1%;">{{carouselactive.descriptioncarousel}}
+                <p class="pcarousel" style="color:rgb(255, 29, 217);margin-top:1%;">{{carouselactive.descriptioncarousel}}
                 </p>
               </div>
           </div>
       
       {% endfor %}
-            
+              
       {% for carousel in carousel %}
-          <div class="carousel-item bd" data-interval="4000">
-              <img src="{{carousel.srcimagecarousel}}" class="d-block slider" alt="{{carousel.srcimagecarousel}}">
+      <div class="carousel-item bd" data-interval="5000">  
+              <img src="{{carousel.srcimagecarousel}}" class="mx-auto d-block slider" alt="{{carousel.srcimagecarousel}}" style="width:100%;">
             <div class="carousel-caption d-none d-md-block">
               <h5 class="carousel-title" style="color:rgb(255, 29, 217);font-size:2em;margin-top:-36%;">{{carousel.titlecarousel}}</h5>
-                <p style="color:rgb(255, 29, 217);margin-top:1%;">{{carousel.descriptioncarousel}}</p>
+                <p class="pcarousel" style="color:rgb(255, 29, 217);margin-top:1%;">{{carousel.descriptioncarousel}}</p>
             </div>
           </div>
             
       {% endfor %}
+    
         </div>
           <a class="carousel-control-prev " href="#carouselExampleCaptions" role="button" data-slide="prev" >
             <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:rgb(79, 231, 104) !impor"></span>
@@ -86,19 +87,22 @@
  
       <!--//slider-->
 {##}
+  
 <div class="row">
 <div class="col-lg-10 ">
 <div class="mt-5 row">
 <div class="col-1"></div>
     <div class="col-lg-11 col-sm-11 col-md-11 col-xs-11 puce">
-<h2 class="mb-5 text-center" style="font-size:4vw;margin-top:2%;">Naturopathe à Forbach</h2></div></div>
+<h2 class="mb-5 text-center" style="font-size:4vw;margin-top:2%;">Spécialiste en réflexologie</h2></div></div>
 
 <div class="row">
   <div class="col-lg-1  col-sm-1  col-md-1"></div>
  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
         
     
-      <p class="puce" style="" >Conseillère en naturopathie, <br>Je vous propose mes service à Forbach et à domicile.<br>Ensemble nous trouverons le chemin de votre bien être définitif.<br>Bien à vous Mélanie Obringer.</p>
+      <p class="puce" style="" >Conseillère en naturopathie, <br>Je vous propose mes service à Forbach et à domicile.<br>Ensemble nous trouverons le chemin de votre bien être définitif.<br>Bien à vous Mélanie Obringer.</p><br><br>
+      <p class="mx-auto" style="color:cornflowerblue;" >Massages certifiés islaVerde.</p>
+      <img src="{{asset('./images/islaverde.jpg')}}" alt="{{asset('./images/islaverde.jpg')}}" style="width:73%;">
       </div>
    
    
@@ -157,7 +161,7 @@
 </div>
 
 
-</div></div></div>
+</div>
 <div class="row">
     <div class="mt-4 col-10 offset-1">
 <h2 class="text-center">La naturopathie</h2>
@@ -219,12 +223,18 @@ On peut donc en conclure que la naturopathie a pour mission de prévenir la mala
       <img class="vignette" src="{{asset('./images/tabacologie.jpg')}}"  alt="{{asset('./images/tabacologie.jpg')}}" >
        </div>
 </div></div></div></div>
+<div class="mx-auto row">
+<div class=" mx-auto col-lg-10 col-md-10 col-sm-12 col-xs-12">
+<p class="citation ">Que ton aliment soit ton seul médicament</p>
+<p class="citation ">Lorsque l'alimentation est mauvaise les médicaments ne sont pas utiles  </p>
+<p class="citation ">Et lorsque l'alimentation est bonne les médicaments sont inutiles!</p>
+</div></div>
 <div class="row">
 <div class="col-4"></div>
 <div class="text-center my-2 col-lg-4 col-md-12 col-sm-12 col-xs-12"><a class="btn btn-perso" href="{{path('prestations')}}">En voir plus </a></div>
 <div class="col-4"></div>
 </div>
-</div>
+
 
 <br><br><br><br><br><br><br><br><br>
 {% endblock %}
